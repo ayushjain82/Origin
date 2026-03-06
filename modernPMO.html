@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a PMO from Scratch | Origin Strategy</title>
+     
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { slate: { 850: '#1e293b' } }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="#" class="hover:text-slate-900 transition-colors">Strategy</a>
+                <a href="#" class="hover:text-slate-900 transition-colors">The Lab</a>
+            </div>
+            <button class="md:hidden text-slate-500 hover:text-slate-900 p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <header class="mb-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-200 pb-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">Organizational Design</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                            Building a PMO from Scratch:<br>
+                            <span class="text-indigo-600">Guardrails, Not Gatekeepers.</span>
+                        </h1>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex-shrink-0">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-lg">AJ</div>
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Ayush Jain</div>
+                            <div class="text-xs text-slate-500 font-medium">Tech Program & Product Leader</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xl text-slate-500 leading-relaxed max-w-3xl">
+                    When engineers hear "PMO," they usually brace for impact. They expect new Jira required fields, mandatory Friday status meetings, and a massive slowdown in velocity. Here is how to build a Project Management Office that actually accelerates delivery.
+                </p>
+            </header>
+
+            <section class="mb-16 bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 overflow-hidden relative shadow-2xl">
+                <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="flex flex-col gap-6 opacity-80">
+                        <div class="text-center md:text-left border-b border-slate-700 pb-4">
+                            <h3 class="text-red-400 font-bold uppercase tracking-widest text-sm flex items-center justify-center md:justify-start gap-2">
+                                <i data-lucide="shield-alert" class="w-4 h-4"></i> The "Process Police"
+                            </h3>
+                            <p class="text-slate-500 text-xs mt-1">High Friction, Low Value</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-xl border border-red-500/20 flex flex-col gap-4">
+                            <div class="flex items-center gap-3 text-slate-400 text-sm">
+                                <i data-lucide="file-warning" class="w-5 h-5 text-red-400"></i>
+                                <span>Mandatory 10-page Charters</span>
+                            </div>
+                            <div class="w-full h-px bg-slate-700/50"></div>
+                            <div class="flex items-center gap-3 text-slate-400 text-sm">
+                                <i data-lucide="calendar-off" class="w-5 h-5 text-red-400"></i>
+                                <span>Synchronous Status Meetings</span>
+                            </div>
+                            <div class="w-full h-px bg-slate-700/50"></div>
+                            <div class="flex items-center gap-3 text-slate-400 text-sm">
+                                <i data-lucide="git-pull-request-closed" class="w-5 h-5 text-red-400"></i>
+                                <span>Rigid "One-Size-Fits-All" Workflows</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-6">
+                        <div class="text-center md:text-left border-b border-slate-700 pb-4">
+                            <h3 class="text-emerald-400 font-bold uppercase tracking-widest text-sm flex items-center justify-center md:justify-start gap-2">
+                                <i data-lucide="rocket" class="w-4 h-4"></i> The "Velocity Engine"
+                            </h3>
+                            <p class="text-slate-500 text-xs mt-1">Low Friction, High Alignment</p>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-xl border border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.1)] flex flex-col gap-4 relative overflow-hidden">
+                            <div class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+                            
+                            <div class="flex items-center gap-3 text-slate-300 text-sm relative z-10">
+                                <i data-lucide="door-open" class="w-5 h-5 text-emerald-400"></i>
+                                <span>Single "Front Door" for Intake</span>
+                            </div>
+                            <div class="w-full h-px bg-slate-700/50"></div>
+                            <div class="flex items-center gap-3 text-slate-300 text-sm relative z-10">
+                                <i data-lucide="radio" class="w-5 h-5 text-emerald-400"></i>
+                                <span>Automated Information Radiators</span>
+                            </div>
+                            <div class="w-full h-px bg-slate-700/50"></div>
+                            <div class="flex items-center gap-3 text-slate-300 text-sm relative z-10">
+                                <i data-lucide="git-merge" class="w-5 h-5 text-emerald-400"></i>
+                                <span>Adaptive Frameworks (Agile/Waterfall hybrid)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <div class="prose prose-slate max-w-none text-slate-600 leading-7 text-lg">
+                    <p>
+                        I've been brought in to establish and rescue PMOs multiple times. The number one mistake leaders make is starting with <strong>Tools</strong> instead of <strong>Trust</strong>. They buy Jira Premium, download a heavy SAFe framework, and immediately start policing the engineering teams.
+                    </p>
+                    <p>
+                        If your PMO's primary output is "asking engineers for updates," you are failing. A modern Technical Program Office exists to clear blockers, manage cross-team dependencies, and translate technical reality to executive strategy.
+                    </p>
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg my-8">
+                        <p class="text-indigo-900 font-medium m-0">
+                            "A successful PMO doesn't manage the people doing the work. It manages the whitespace <em>between</em> the people doing the work."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-24">
+                <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                    <i data-lucide="map" class="w-6 h-6 text-indigo-600"></i> The 90-Day Setup Playbook
+                </h2>
+
+                <div class="space-y-8">
+                    
+                    <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold text-lg">
+                                30
+                            </div>
+                            <div class="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">Days</div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Discovery & The "Single Front Door"</h3>
+                            <p class="text-slate-600 mb-4">
+                                Do not change how teams execute yet. Focus entirely on how work <em>enters</em> the system. If Product, Sales, and Support are all tapping engineers on the shoulder, you have chaos.
+                            </p>
+                            <ul class="list-disc pl-5 text-slate-500 space-y-2 text-sm">
+                                <li>Establish a single Intake Form (Triage).</li>
+                                <li>Map the current Value Stream (Where are the bottlenecks?).</li>
+                                <li><strong>Goal:</strong> Stop the bleeding of unauthorized "shadow work."</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold text-lg">
+                                60
+                            </div>
+                            <div class="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">Days</div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Lightweight Governance & Radiators</h3>
+                            <p class="text-slate-600 mb-4">
+                                Shift from "Push" to "Pull" reporting. Executives shouldn't have to ask for status, and engineers shouldn't have to write it. Establish automated dashboards.
+                            </p>
+                            <ul class="list-disc pl-5 text-slate-500 space-y-2 text-sm">
+                                <li>Implement a lightweight Project Charter (One-pager).</li>
+                                <li>Set up a bi-weekly Portfolio Review (Exec level, not daily standups).</li>
+                                <li><strong>Goal:</strong> Create visibility without creating administrative overhead.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold text-lg">
+                                90
+                            </div>
+                            <div class="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">Days</div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Scaling & Dependency Management</h3>
+                            <p class="text-slate-600 mb-4">
+                                Now that intake is clean and visibility is high, focus on cross-team execution. This is where the PMO earns its keep by preventing train wrecks before they happen.
+                            </p>
+                            <ul class="list-disc pl-5 text-slate-500 space-y-2 text-sm">
+                                <li>Institute formal Dependency Mapping (Team A needs API from Team B).</li>
+                                <li>Standardize risk escalation paths.</li>
+                                <li><strong>Goal:</strong> Predictable delivery across complex, multi-team programs.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-24">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                            <i data-lucide="folder-down" class="w-6 h-6 text-indigo-600"></i> The PMO Starter Kit
+                        </h2>
+                        <p class="text-slate-500 mt-2">Stop starting from blank pages. Here are the exact templates I use to bootstrap a PMO.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden group">
+                        <div class="h-2 bg-indigo-500"></div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-indigo-50 rounded-lg text-indigo-600">
+                                    <i data-lucide="file-text" class="w-6 h-6"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-1 rounded">Notion / Word</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">The One-Page Charter</h3>
+                            <p class="text-sm text-slate-500 mb-6 flex-1">
+                                Forget 20-page PRDs. This template forces alignment on the "Why," the Success Metrics, and the specific Non-Goals (Out of Scope) before a single line of code is written.
+                            </p>
+                            <a href="#" class="w-full py-2.5 bg-slate-50 border border-slate-200 text-slate-700 font-medium text-sm rounded-lg text-center hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition-colors flex items-center justify-center gap-2">
+                                <i data-lucide="download" class="w-4 h-4"></i> Download Template
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden group">
+                        <div class="h-2 bg-emerald-500"></div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-emerald-50 rounded-lg text-emerald-600">
+                                    <i data-lucide="git-pull-request" class="w-6 h-6"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-1 rounded">Jira / Asana</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">The "Front Door" Intake</h3>
+                            <p class="text-sm text-slate-500 mb-6 flex-1">
+                                A standardized intake workflow. It includes the mandatory 5 questions stakeholders must answer before a request is even considered for the backlog.
+                            </p>
+                            <a href="#" class="w-full py-2.5 bg-slate-50 border border-slate-200 text-slate-700 font-medium text-sm rounded-lg text-center hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 transition-colors flex items-center justify-center gap-2">
+                                <i data-lucide="download" class="w-4 h-4"></i> Download Template
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden group">
+                        <div class="h-2 bg-purple-500"></div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-purple-50 rounded-lg text-purple-600">
+                                    <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-1 rounded">Slides / Email</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg mb-2">Exec Status Radiator</h3>
+                            <p class="text-sm text-slate-500 mb-6 flex-1">
+                                A traffic-light (Red/Yellow/Green) reporting template designed for C-Suite scanning. Focuses entirely on Risks, Blockers, and Financial/Timeline Variance.
+                            </p>
+                            <a href="#" class="w-full py-2.5 bg-slate-50 border border-slate-200 text-slate-700 font-medium text-sm rounded-lg text-center hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 transition-colors flex items-center justify-center gap-2">
+                                <i data-lucide="download" class="w-4 h-4"></i> Download Template
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="bg-slate-900 rounded-2xl p-10 text-center text-white mb-12 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 20px 20px;"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Need help standing up your PMO?</h3>
+                    <p class="text-slate-400 mb-8 max-w-xl mx-auto text-lg">
+                        I help organizations transition from chaotic delivery to predictable execution without alienating their engineering teams.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#" class="bg-indigo-600 text-white hover:bg-indigo-500 px-8 py-3 rounded-lg font-bold transition-colors inline-flex items-center justify-center gap-2">
+                            <i data-lucide="calendar" class="w-5 h-5"></i> Book a Strategy Call
+                        </a>
+                        <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="bg-slate-800 text-white border border-slate-700 hover:bg-slate-700 px-8 py-3 rounded-lg font-bold transition-colors inline-flex items-center justify-center gap-2">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i> Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+         <div class="max-w-4xl mx-auto">
+            <p class="mb-2">© 2025 Ayush Jain. All rights reserved.</p>
+            <p class="text-xs">Nexus Plan / Origin Insights</p>
+         </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
