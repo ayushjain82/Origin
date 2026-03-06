@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a PMO from Scratch</title>
+     
+      <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="thelab.html" class="hover:text-slate-900 transition-colors">The Lab</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button aria-label="mobile menu" id="mobile-menu-btn"
+                class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+            <div class="flex flex-col p-6 space-y-6">
+                <a href="thelab.html"
+                    class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The
+                    Lab</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <header class="mb-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-200 pb-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">Systems Architecture</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                            Automating Alignment:<br>
+                            <span class="text-indigo-600">Cross-Project Dependency Mapping in Jira.</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <p class="text-xl text-slate-500 leading-relaxed max-w-3xl">
+                    Cross-team dependencies kill velocity. When Team A is waiting on Team B, and the only tracking mechanism is a spreadsheet or a verbal promise in a Scrum of Scrums, you are flying blind. Here is how to hardwire dependency tracking directly into Jira.
+                </p>
+            </header>
+
+            <section class="mb-16 bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 overflow-hidden relative shadow-2xl">
+                <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 max-w-3xl mx-auto">
+                    
+                    <div class="flex-1 bg-slate-800 border border-slate-700 rounded-xl p-6 w-full relative z-10 shadow-lg">
+                        <div class="flex items-center justify-between mb-4 border-b border-slate-700 pb-2">
+                            <span class="text-slate-300 font-bold text-sm">Team Alpha (Frontend)</span>
+                            <span class="bg-indigo-500/20 text-indigo-300 text-[10px] px-2 py-1 rounded">Board A</span>
+                        </div>
+                        <div class="bg-slate-900 border-l-4 border-yellow-500 p-3 rounded shadow">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-slate-400 text-xs font-mono">ALP-104</span>
+                                <i data-lucide="clock" class="w-3 h-3 text-yellow-500"></i>
+                            </div>
+                            <div class="text-slate-200 text-sm font-medium">Build Checkout UI</div>
+                            <div class="mt-2 bg-red-500/10 border border-red-500/30 text-red-400 text-[10px] px-2 py-1 rounded-full inline-flex items-center gap-1">
+                                <i data-lucide="link" class="w-3 h-3"></i> is blocked by BET-88
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-shrink-0 w-16 md:w-32 h-16 flex items-center justify-center relative">
+                        <div class="absolute left-0 right-0 h-0.5 bg-red-500 border-y border-red-400/50 border-dashed animate-pulse"></div>
+                        <div class="bg-slate-900 border border-red-500 p-2 rounded-full relative z-10 shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 text-red-500"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 bg-slate-800 border border-slate-700 rounded-xl p-6 w-full relative z-10 shadow-lg">
+                        <div class="flex items-center justify-between mb-4 border-b border-slate-700 pb-2">
+                            <span class="text-slate-300 font-bold text-sm">Team Beta (Backend)</span>
+                            <span class="bg-emerald-500/20 text-emerald-300 text-[10px] px-2 py-1 rounded">Board B</span>
+                        </div>
+                        <div class="bg-slate-900 border-l-4 border-blue-500 p-3 rounded shadow">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-slate-400 text-xs font-mono">BET-88</span>
+                                <div class="w-4 h-4 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center"><div class="w-2 h-2 rounded-full bg-blue-400"></div></div>
+                            </div>
+                            <div class="text-slate-200 text-sm font-medium">Expose Payment API</div>
+                            <div class="mt-2 bg-slate-800 border border-slate-700 text-slate-500 text-[10px] px-2 py-1 rounded-full inline-flex items-center gap-1">
+                                <i data-lucide="link" class="w-3 h-3"></i> blocks ALP-104
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <div class="prose prose-slate max-w-none text-slate-600 leading-7 text-lg">
+                    <p>
+                        In a scaling engineering organization, isolation is impossible. Features span across multiple microservices, requiring coordinated releases between distinct Scrum teams working out of completely separate Jira projects.
+                    </p>
+                    <p>
+                        If you rely on human memory or status meetings to manage these handoffs, you will fail. The solution is to treat dependencies like relational data. By configuring Jira correctly, you can create a systemic "tripwire" that alerts everyone when a timeline shifts.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">1</span>
+                    The Foundation: Configuring Issue Linking
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        Out of the box, Jira comes with several link types (Blocks, Relates To, Duplicates). As a Technical Program Leader, my first rule is: <strong>"Relates To" is banned for dependency tracking.</strong> It is a garbage drawer. It tells you two tickets are friends, but it doesn't tell you the direction of the impact.
+                    </p>
+                    
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">The Required Configuration</h3>
+                    <p class="text-sm text-slate-500 mb-4">You must ensure your Jira Administrators have configured directed link types. We rely exclusively on the <code>Blocks</code> link type to represent constraints.</p>
+                    
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 font-mono text-sm text-slate-700 mb-6 overflow-x-auto">
+                        <div class="grid grid-cols-3 gap-4 border-b border-slate-200 pb-2 mb-2 font-bold text-slate-900">
+                            <div>Name</div>
+                            <div>Outward Description</div>
+                            <div>Inward Description</div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="text-indigo-600">Blocks</div>
+                            <div>blocks</div>
+                            <div>is blocked by</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <i data-lucide="book-open" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-blue-900 text-sm block mb-1">Official Atlassian Documentation</strong>
+                            <a href="https://support.atlassian.com/jira-cloud-administration/docs/configure-issue-linking/" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm font-medium underline">Learn how to configure Issue Linking in Jira Settings &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">2</span>
+                    The Execution: Cross-Project Linking
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        The magic happens when Team Alpha (Frontend) links their ticket to a ticket living in Team Beta's (Backend) project. This creates a bidirectional bridge across Scrum boards.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-6">
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-red-500"></i> The Anti-Pattern</h4>
+                            <p class="text-sm text-slate-600">
+                                Team A writes a ticket: <em>"Build Frontend and wait for Team B to finish the API."</em> This ticket sits in "In Progress" for 3 sprints, destroying Team A's burndown chart.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> The Best Practice</h4>
+                            <p class="text-sm text-slate-600">
+                                Team A writes ticket <code>ALP-104</code>. They link it using <strong>"is blocked by"</strong> to Team B's specific ticket <code>BET-88</code>. Team A's ticket stays in the Backlog until <code>BET-88</code> is resolved.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-5 rounded-lg border-l-4 border-indigo-500">
+                        <h4 class="font-bold text-indigo-300 text-sm uppercase tracking-wider mb-2">The PMO Governance Rule</h4>
+                        <p class="text-sm text-slate-300">
+                            A Scrum Team is not allowed to pull a ticket into an active Sprint if it possesses an unresolved "Is Blocked By" link to an external team's ticket. Dependencies must be resolved <em>before</em> sprint execution begins.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">3</span>
+                    The Visibility: JQL & Dashboards
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        Once the links are created, you must visualize them. A dependency link is useless if it's buried at the bottom of a ticket description.
+                    </p>
+
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">1. Board Card Layout (Card Colors)</h3>
+                    <p class="text-sm text-slate-500 mb-4">You can configure the Jira Scrum Board to physically highlight cards that are blocked by another team.</p>
+                    <div class="bg-slate-800 p-4 rounded-lg mb-8">
+                        <code class="text-emerald-400 font-mono text-sm block mb-1">// In Board Settings > Card Colors > JQL</code>
+                        <code class="text-white font-mono text-sm">issueLinkType = "is blocked by" AND resolution = Unresolved</code>
+                        <div class="mt-2 text-xs text-slate-400">Set color to: <span class="inline-block w-3 h-3 bg-red-500 rounded-full ml-1 align-middle"></span> Red</div>
+                    </div>
+
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">2. The "Dependency Train Wreck" Dashboard</h3>
+                    <p class="text-sm text-slate-500 mb-4">Use this JQL in a "Filter Results" dashboard widget to see exactly which teams are holding up other teams across the portfolio.</p>
+                    <div class="bg-slate-800 p-4 rounded-lg mb-6">
+                        <code class="text-emerald-400 font-mono text-sm block mb-1">// Find all tickets in my project blocked by external projects</code>
+                        <code class="text-white font-mono text-sm break-words">
+                            project = "Alpha" AND issueLinkType = "is blocked by" AND linkedIssue in projectedIssues("Beta", "Gamma") AND statusCategory != Done
+                        </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">4</span>
+                    Leveling Up: Predecessors & Successors in Advanced Roadmaps
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm border-t-4 border-t-purple-500">
+                    <p class="text-slate-600 mb-6">
+                        If your organization utilizes <strong>Jira Premium</strong> or Enterprise, you have access to Advanced Roadmaps. This tool takes the raw <code>Blocks / Is Blocked By</code> links you established in Step 1 and mathematically translates them into a universal project management language: <strong>Predecessors and Successors</strong>.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="p-1.5 bg-slate-200 rounded text-slate-600"><i data-lucide="corner-left-up" class="w-4 h-4"></i></div>
+                                <h3 class="font-bold text-slate-900 text-lg">Predecessors (Upstream)</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-3">
+                                What are you waiting on? If you are Team Alpha building the UI, the Backend API from Team Beta is your Predecessor.
+                            </p>
+                            <div class="text-[11px] font-mono text-slate-500 bg-white p-2 border border-slate-200 rounded">
+                                Advanced Roadmaps Rule: Your ticket's <span class="text-indigo-600 font-bold">Start Date</span> cannot occur before the Predecessor's <span class="text-indigo-600 font-bold">End Date</span>.
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="p-1.5 bg-slate-200 rounded text-slate-600"><i data-lucide="corner-right-down" class="w-4 h-4"></i></div>
+                                <h3 class="font-bold text-slate-900 text-lg">Successors (Downstream)</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-3">
+                                Who is waiting on you? Once Team Alpha finishes the UI, the Marketing team can launch the campaign. Marketing is your Successor.
+                            </p>
+                            <div class="text-[11px] font-mono text-slate-500 bg-white p-2 border border-slate-200 rounded">
+                                Advanced Roadmaps Rule: If your <span class="text-red-600 font-bold">End Date</span> slips, Jira will automatically flag the Successor's timeline as broken.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-xl p-6 mb-8 relative overflow-hidden">
+                        <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-red-500/10 to-transparent"></div>
+                        
+                        <h4 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i data-lucide="siren" class="w-5 h-5 text-red-400"></i> The "Schedule Paradox" Alert
+                        </h4>
+                        <p class="text-sm text-slate-300">
+                            The true power of this setup is <strong>Auto-Scheduling and Conflict Detection</strong>. When a Predecessor (Team B's API) gets pushed to Sprint 5, but the Successor (Team A's UI) is rigidly scheduled for Sprint 4, Advanced Roadmaps will literally highlight the dependency badge in <strong class="text-red-400">Red</strong> on your timeline. It visually exposes the physical impossibility of your current plan, forcing leaders to negotiate priority <em>before</em> the sprint starts.
+                        </p>
+                    </div>
+
+                    <div class="flex items-start gap-3 bg-purple-50 p-4 rounded-lg border border-purple-100">
+                        <i data-lucide="external-link" class="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-purple-900 text-sm block mb-1">Official Atlassian Learning</strong>
+                            <a href="https://support.atlassian.com/jira-software-cloud/docs/manage-dependencies-in-advanced-roadmaps/" target="_blank" class="text-purple-600 hover:text-purple-800 text-sm font-medium underline">Learn how to manage Predecessors and Successors visually in Advanced Roadmaps
+
+        </div>
+    </main>
+
+     <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+            <p>© 2025 Ayush Jain. All rights reserved.</p>
+            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+                <span class="icon-linkedin-logo"></span>
+                <span>Connect on LinkedIn</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Mobile Menu Script -->
+    <script src="js/nav.js" defer></script>
+</body>
+</html>
