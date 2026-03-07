@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploying Atlassian Rovo</title>
+     
+      <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="thelab.html" class="hover:text-slate-900 transition-colors">The Lab</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button aria-label="mobile menu" id="mobile-menu-btn"
+                class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+            <div class="flex flex-col p-6 space-y-6">
+                <a href="thelab.html"
+                    class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The
+                    Lab</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <header class="mb-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-200 pb-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">AI Integration</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider">Platform</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                            The AI-Powered PMO:<br>
+                            <span class="text-indigo-600">Deploying Atlassian Rovo.</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <p class="text-xl text-slate-500 leading-relaxed max-w-3xl">
+                    For years, Technical Program Managers have been the human glue connecting fragmented tools—manually hunting down a Figma link, cross-referencing a Confluence PRD, and updating a Jira Epic. Atlassian Rovo changes the math. It isn't just a chatbot; it is a structural context engine.
+                </p>
+            </header>
+
+            <section class="mb-16 bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 overflow-hidden relative shadow-2xl">
+                <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+                <div class="relative z-10 flex flex-col items-center">
+                    <h3 class="text-slate-400 text-xs font-mono uppercase tracking-widest mb-8 border-b border-slate-700 pb-2 w-full text-center">The Context Graph</h3>
+                    
+                    <div class="flex items-center justify-center gap-4 md:gap-8 w-full max-w-2xl mx-auto relative">
+                        
+                        <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-indigo-500/30 -z-10"></div>
+                        <div class="absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-indigo-400 -z-10 animate-pulse"></div>
+
+                        <div class="flex flex-col items-center gap-3">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center shadow-lg">
+                                <i data-lucide="figma" class="w-6 h-6 text-pink-400"></i>
+                            </div>
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center shadow-lg">
+                                <i data-lucide="github" class="w-6 h-6 text-slate-300"></i>
+                            </div>
+                        </div>
+
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-indigo-600 to-purple-700 p-1 shadow-[0_0_40px_rgba(99,102,241,0.4)] z-10">
+                            <div class="w-full h-full bg-slate-900 rounded-full flex flex-col items-center justify-center">
+                                <i data-lucide="bot" class="w-8 h-8 md:w-10 md:h-10 text-indigo-400 mb-1"></i>
+                                <span class="text-white font-bold text-xs md:text-sm">Rovo</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center gap-3">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-blue-900/40 border border-blue-500/30 flex items-center justify-center shadow-lg">
+                                <i data-lucide="trello" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-blue-900/40 border border-blue-500/30 flex items-center justify-center shadow-lg">
+                                <i data-lucide="file-text" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <div class="prose prose-slate max-w-none text-slate-600 leading-7 text-lg">
+                    <p>
+                        Engineers don't hate Jira because it's a bad tool; they hate it because it requires constant administrative upkeep. They have to leave their code, search for a ticket, read a detached Confluence spec, and manually update a status. 
+                    </p>
+                    <p>
+                        Atlassian Rovo fundamentally alters this interaction. By integrating an LLM directly into the Atlassian Teamwork Graph—and allowing it to index external tools like Google Drive, Slack, and GitHub—Rovo acts as a deeply contextual virtual teammate. 
+                    </p>
+                    <p>
+                        Here is how Technical Program Leaders should deploy Rovo to eliminate administrative overhead and get engineers back to writing code.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mb-24">
+                <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-6 h-6 text-indigo-600"></i> The 3 Pillars of Rovo Integration
+                </h2>
+
+                <div class="space-y-8">
+                    
+                    <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all hover:border-indigo-300 group">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i data-lucide="search" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">1. Rovo Search: The End of Knowledge Silos</h3>
+                            <p class="text-slate-600 mb-4">
+                                Context switching is the enemy of flow. Traditionally, if an engineer needs to know "What is the new checkout flow?", they search Jira, fail, ask in Slack, and wait an hour for a PM to link a Figma file.
+                            </p>
+                            <p class="text-slate-600 mb-4">
+                                Rovo Search indexes not just Jira and Confluence, but third-party SaaS apps. It understands permissions natively, meaning users only see what they are allowed to see.
+                            </p>
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm text-slate-700">
+                                <strong>The PMO Playbook:</strong> Immediately integrate your Google Workspace / SharePoint and Figma environments into Rovo. Train your teams to stop asking "Where is the document?" and start asking Rovo "Summarize the latest checkout architecture decisions."
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all hover:border-emerald-300 group">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="bot" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">2. Rovo Agents: Your Virtual Scrum Masters</h3>
+                            <p class="text-slate-600 mb-4">
+                                This is the killer feature. Rovo Agents are specialized AI teammates that you can instruct to execute specific, repetitive tasks. You create them using natural language prompts without writing code.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div class="bg-emerald-50/50 p-4 rounded-lg border border-emerald-100">
+                                    <strong class="text-emerald-900 text-sm block mb-1">The Backlog Groomer Agent</strong>
+                                    <p class="text-xs text-slate-600">Instruct this agent to scan the backlog weekly. It automatically flags tickets missing Acceptance Criteria or Story Points, and leaves a comment tagging the reporter.</p>
+                                </div>
+                                <div class="bg-emerald-50/50 p-4 rounded-lg border border-emerald-100">
+                                    <strong class="text-emerald-900 text-sm block mb-1">The Release Notes Agent</strong>
+                                    <p class="text-xs text-slate-600">Instruct this agent to review all tickets moved to "Done" in the current sprint, translate the technical jargon into business value, and draft a Confluence page for the Product Manager to review.</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm text-slate-700">
+                                <strong>The PMO Playbook:</strong> Deploy Agents to handle process enforcement. Humans should focus on strategy and coaching, not nagging people to fill out required fields.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all hover:border-purple-300 group">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="message-square" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">3. Rovo Chat: The Automated Status Report</h3>
+                            <p class="text-slate-600 mb-4">
+                                Instead of interrupting three engineering leads to ask "Are we on track for the Q3 release?", program managers can simply ask Rovo.
+                            </p>
+                            <p class="text-slate-600 mb-4">
+                                Because Rovo understands the Teamwork Graph, it can synthesize the current state of an Epic, highlight blocked sub-tasks, summarize the recent comments debating a technical approach, and output a clean executive summary.
+                            </p>
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm text-slate-700">
+                                <strong>The PMO Playbook:</strong> Cancel your Friday status gathering meetings. Use Rovo to generate the baseline status, and use synchronous meeting time exclusively for resolving the blockers Rovo identifies.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <div class="mb-8 border-b border-slate-200 pb-4">
+                    <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <i data-lucide="terminal-square" class="w-6 h-6 text-indigo-600"></i> The Configuration Playbook: Copy-Paste Prompts
+                    </h2>
+                    <p class="text-lg text-slate-600 mt-2 max-w-2xl">
+                        With Rovo, your "code" is Natural Language. Here are the exact system prompts and trigger configurations I use to bootstrap AI Agents for a PMO. 
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+                            <h3 class="font-bold text-slate-900 flex items-center gap-2">
+                                <i data-lucide="shield-alert" class="w-5 h-5 text-red-500"></i> 
+                                Agent Config 1: The Backlog Enforcer
+                            </h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-white px-2 py-1 rounded border border-slate-200">Scheduled Task</span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-slate-600 mb-4">
+                                Stop being the bad guy who nags engineers to add Story Points. Automate the friction.
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="md:col-span-1 space-y-4">
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Trigger Event</div>
+                                        <div class="text-sm text-slate-800 font-mono bg-slate-100 p-2 rounded border border-slate-200">Cron: Every Monday @ 8:00 AM</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Context (JQL)</div>
+                                        <div class="text-sm text-slate-800 font-mono bg-slate-100 p-2 rounded border border-slate-200 break-words">project = ENG AND status = Backlog AND sprint in openSprints()</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Action</div>
+                                        <div class="text-sm text-slate-800 font-mono bg-slate-100 p-2 rounded border border-slate-200">Add Jira Comment</div>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">System Prompt / Instructions</div>
+                                    <div class="bg-slate-900 p-4 rounded-lg relative group">
+                                        <code class="text-sm text-emerald-400 font-mono block whitespace-pre-wrap leading-relaxed">You are a strict but helpful Agile Scrum Master. 
+Review the tickets provided in the context. 
+For each ticket, check if the "Story Points" field is empty OR if the "Description" field lacks an "Acceptance Criteria" header.
+
+If either is missing, add a comment to the ticket tagging the Reporter. 
+The comment should say: "🤖 Hi [Reporter Name], Rovo here! To ensure this ticket is ready for sprint planning, please add [Missing Field]. Let me know if you need help drafting the Acceptance Criteria based on the current description!"</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+                            <h3 class="font-bold text-slate-900 flex items-center gap-2">
+                                <i data-lucide="book-open" class="w-5 h-5 text-blue-500"></i> 
+                                Agent Config 2: The Release Translator
+                            </h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-white px-2 py-1 rounded border border-slate-200">Event Driven</span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-slate-600 mb-4">
+                                Translates deeply technical Git commits and Jira subtasks into customer-facing release notes for Product Managers.
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="md:col-span-1 space-y-4">
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Trigger Event</div>
+                                        <div class="text-sm text-slate-800 font-mono bg-slate-100 p-2 rounded border border-slate-200">Issue Transitioned to "Done"</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Data Sources</div>
+                                        <div class="text-sm text-slate-800 font-mono bg-slate-100 p-2 rounded border border-slate-200">Jira Ticket, Linked Confluence PRD, Linked GitHub PRs</div>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">System Prompt / Instructions</div>
+                                    <div class="bg-slate-900 p-4 rounded-lg relative group">
+                                        <code class="text-sm text-emerald-400 font-mono block whitespace-pre-wrap leading-relaxed">You are a Technical Product Marketing Manager.
+When this ticket is marked Done, analyze the Jira Description, the linked GitHub Pull Requests, and the original Confluence PRD. 
+
+Draft a 3-sentence summary of what was built. 
+Sentence 1: The specific feature added.
+Sentence 2: The technical friction this resolves.
+Sentence 3: The business value to the end-user. 
+
+Do not use internal system names or developer jargon. Append this summary to the internal Confluence page titled "Draft Release Notes Q3".</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+                            <h3 class="font-bold text-slate-900 flex items-center gap-2">
+                                <i data-lucide="message-square" class="w-5 h-5 text-purple-500"></i> 
+                                Rovo Chat: The 10-Second Exec Report
+                            </h3>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-white px-2 py-1 rounded border border-slate-200">Ad-Hoc Query</span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-slate-600 mb-4">
+                                Save this prompt to a sticky note. Paste it into the Rovo Chat bar 10 minutes before your SteerCo meeting to instantly generate a portfolio health check.
+                            </p>
+                            <div class="bg-slate-900 p-5 rounded-lg border-l-4 border-purple-500">
+                                <code class="text-sm text-purple-300 font-mono block whitespace-pre-wrap leading-relaxed">@Rovo Look at all Epics in the "Cloud Migration" project. 
+                            1. Identify any Epic where the target end date is in the past, but the status is not Done. 
+                            2. For those Epics, summarize the last 3 comments from the engineering leads to explain the delay.
+                            3. List any open tickets linked with "is blocked by" that belong to the Security team. 
+                            4. Output this in a bulleted list format suitable for a VP of Engineering.</code>
+                                                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <div class="bg-slate-900 rounded-2xl p-8 shadow-xl border-l-8 border-red-500">
+                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="triangle-alert" class="w-6 h-6 text-red-500"></i> The Architect's Warning
+                    </h3>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-6">
+                        AI is an accelerator, not a savior. If your underlying Jira architecture is a mess—if you have 20 undocumented custom issue types, overlapping workflows, and abandoned Confluence spaces—<strong>Rovo will just synthesize your garbage faster.</strong>
+                    </p>
+                    <p class="text-slate-300 text-lg leading-relaxed">
+                        Before deploying Rovo Agents, you must standardize your issue taxonomy and enforce hygiene. Clean data is the prerequisite for effective AI.
+                    </p>
+                </div>
+            </section>
+
+            <div class="bg-slate-900 rounded-2xl p-10 text-center text-white mb-12 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 20px 20px;"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to wire this into your Jira instance?</h3>
+                    <p class="text-slate-400 mb-8 max-w-xl mx-auto text-lg">
+                        Having the right prompts is only half the battle. Read the follow-up guide on how to safely architect your data boundaries and integrate Rovo into your enterprise.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="integrating_rovo.html" class="bg-indigo-600 text-white hover:bg-indigo-500 px-8 py-3 rounded-lg font-bold transition-colors inline-flex items-center justify-center gap-2">
+                            <i data-lucide="network" class="w-5 h-5"></i> Read the Integration Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+     <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+            <p>© 2025 Ayush Jain. All rights reserved.</p>
+            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+                <span class="icon-linkedin-logo"></span>
+                <span>Connect on LinkedIn</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Mobile Menu Script -->
+    <script src="js/nav.js" defer></script>
+</body>
+</html>

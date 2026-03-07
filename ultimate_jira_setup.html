@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecting Jira</title>
+     
+      <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="thelab.html" class="hover:text-slate-900 transition-colors">The Lab</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button aria-label="mobile menu" id="mobile-menu-btn"
+                class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+            <div class="flex flex-col p-6 space-y-6">
+                <a href="thelab.html"
+                    class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The
+                    Lab</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <header class="mb-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-200 pb-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">Systems Architecture</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                            Architecting Jira for 2026:<br>
+                            <span class="text-indigo-600">The Step-by-Step Setup Guide.</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <p class="text-xl text-slate-500 leading-relaxed max-w-3xl">
+                    Jira is the nervous system of your engineering organization. If you configure it like a micromanager, your teams will move like they are walking through molasses. This is my highly opinionated, step-by-step guide to setting up a Jira instance optimized for scaling and velocity.
+                </p>
+            </header>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">1</span>
+                    The Foundation: Choosing Your Plan
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        Before you configure a single workflow, you have to license the right tier. Do not overbuy, but do not handicap your PMO either.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50">
+                            <h4 class="font-bold text-slate-900 mb-1">Free Plan</h4>
+                            <p class="text-sm text-slate-600">Great for a garage startup. Hard limit of 100 automation executions/month. Skip this if you are building a real PMO.</p>
+                        </div>
+                        <div class="p-5 rounded-xl border border-slate-300 bg-white shadow-sm">
+                            <h4 class="font-bold text-slate-900 mb-1">Standard Plan</h4>
+                            <p class="text-sm text-slate-600">The baseline. Gives you 250GB storage, user roles, and 1,700 automation runs. Start here for teams under 50.</p>
+                        </div>
+                        <div class="p-5 rounded-xl border-2 border-slate-400 bg-indigo-50/30 shadow-sm relative">                
+                            <h4 class="font-bold text-indigo-900 mb-1 mt-2">Premium Plan</h4>
+                            <p class="text-sm text-slate-700"><strong>Mandatory for scaling.</strong> Unlocks Advanced Roadmaps, cross-project dependency tracking, and Atlassian Intelligence (AI).</p>
+                        </div>
+                        <div class="p-5 rounded-xl border border-slate-200 bg-slate-900 text-white">
+                            <h4 class="font-bold text-white mb-1">Enterprise</h4>
+                            <p class="text-sm text-slate-300">Unlimited automation, advanced analytics, and 24/7 support. Required for massive SAFe deployments.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">2</span>
+                    The Blueprint: Deciding on Your Project Type
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        When you click <code>Create Project</code>, Jira asks you what <em>type</em> of project you want. If you choose incorrectly here, you will spend the next six months doing painful data migrations. 
+                    </p>
+
+                    <div class="mb-8 bg-gradient-to-r from-indigo-900 to-slate-900 rounded-xl p-6 text-white shadow-md relative overflow-hidden">
+                        <div class="absolute right-0 top-0 opacity-10 transform translate-x-1/4 -translate-y-1/4">
+                            <i data-lucide="zap" class="w-48 h-48"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-2 text-indigo-300 font-bold tracking-widest text-xs uppercase mb-2">
+                                <i data-lucide="radar" class="w-4 h-4"></i> 2026 Platform Convergence
+                            </div>
+                            <p class="text-indigo-50 text-sm leading-relaxed">
+                                Atlassian is actively merging <strong>"Software Development"</strong> and <strong>"Work Management"</strong> into a single, unified project type called simply "Jira." Adjust your architecture strategy accordingly below.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-indigo-300 transition-colors">
+                            <div class="mt-1 p-2 bg-indigo-100 text-indigo-600 rounded-lg"><i data-lucide="code-2" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Jira Software (For Builders)</h4>
+                                <p class="text-sm text-slate-600 mt-1">The gold standard. Includes tools for sprints, backlogs, and code-repository integrations (GitHub/GitLab). <strong>Use this for all Engineering and Product teams.</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-emerald-300 transition-colors">
+                            <div class="mt-1 p-2 bg-emerald-100 text-emerald-600 rounded-lg"><i data-lucide="headphones" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Jira Service Management (For Queues)</h4>
+                                <p class="text-sm text-slate-600 mt-1">Designed for SLA tracking and external portals. <strong>Use this strictly for IT Helpdesk, HR intake, or internal platform support queues.</strong> Do not use this to build software.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-blue-300 transition-colors">
+                            <div class="mt-1 p-2 bg-blue-100 text-blue-600 rounded-lg"><i data-lucide="lightbulb" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Jira Product Discovery (For Thinkers)</h4>
+                                <p class="text-sm text-slate-600 mt-1">Built for Product Managers to gather feedback, validate ideas, and score priorities (like WSJF) <em>before</em> pushing them to the engineering backlog.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 rounded-xl border border-red-200 bg-red-50 opacity-80">
+                            <div class="mt-1 p-2 bg-red-100 text-red-600 rounded-lg"><i data-lucide="ban" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-red-900">Jira Work Management (The Trap)</h4>
+                                <p class="text-sm text-red-700 mt-1">Historically used for Marketing or Legal. Because Atlassian is merging this into "Jira Software," <strong>do not start new projects here.</strong> Put business teams in Software boards instead.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">3</span>
+                    The Architecture: Company vs. Team Managed
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm border-t-4 border-t-blue-500">
+                    <p class="text-slate-600 mb-6">
+                        Once you pick the project type, Jira will ask you for the management framework. The Atlassian guide says "Team-managed is simpler." I say: <strong>Team-managed is a trap for scaling organizations.</strong>
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-xl border border-red-200 bg-red-50/50">
+                            <h4 class="font-bold text-red-900 mb-2 flex items-center gap-2">
+                                <i data-lucide="x-circle" class="w-4 h-4"></i> Team-Managed
+                            </h4>
+                            <p class="text-sm text-slate-700">
+                                Great for a 5-person startup. But because every project has its own isolated configurations, you can never standardize reporting, enforce global workflows, or track cross-team dependencies. It creates data silos. Avoid at all costs in an enterprise.
+                            </p>
+                        </div>
+                        <div class="p-6 rounded-xl border border-emerald-200 bg-emerald-50/50 shadow-sm relative">
+                            <div class="absolute top-4 right-4 text-emerald-600"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
+                            <h4 class="font-bold text-emerald-900 mb-2 flex items-center gap-2">
+                                <i data-lucide="building-2" class="w-4 h-4"></i> Company-Managed
+                            </h4>
+                            <p class="text-sm text-slate-700">
+                                <strong>Always select this.</strong> It relies on shared configuration schemes. When you want to update the definition of "Done" across 12 teams, you change it in one central place. It is mandatory for Advanced Roadmaps.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">4</span>
+                    The Taxonomy: Standardizing Issue Types
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        One of the fastest ways to ruin Jira is by creating 15 custom issue types ("Design Task," "QA Task," "Database Task"). A bloated taxonomy confuses engineers and ruins reporting. Stick to the standard 3-tier hierarchy.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 border border-slate-200">
+                            <div class="mt-1 p-2 bg-purple-100 text-purple-600 rounded shadow-sm"><i data-lucide="target" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">1. Epic (The Big Picture)</h4>
+                                <p class="text-sm text-slate-600">A large chunk of work that spans multiple sprints. This is what Product Managers and Executives track. <em>Rule: Epics must always tie to a strategic goal.</em></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 border border-slate-200">
+                            <div class="mt-1 p-2 bg-emerald-100 text-emerald-600 rounded shadow-sm"><i data-lucide="bookmark" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">2. Standard Issue (Story / Task / Bug)</h4>
+                                <p class="text-sm text-slate-600">The fundamental unit of execution. <em>Rule: A standard issue must be sized small enough to be completed within a single Sprint.</em></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 border border-slate-200">
+                            <div class="mt-1 p-2 bg-blue-100 text-blue-600 rounded shadow-sm"><i data-lucide="check-square" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">3. Subtask (The Developer's Checklist)</h4>
+                                <p class="text-sm text-slate-600">A granular piece of work required to finish a Story. PMOs should never report on Subtasks. Let the development teams manage these locally.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">5</span>
+                    The Engine: Workflows & Assignment
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm border-t-4 border-t-emerald-500">
+                    <p class="text-slate-600 mb-6">
+                        A workflow consists of <strong>Statuses</strong> (where the ticket sits) and <strong>Transitions</strong> (the actions that move it). Traditional PMOs build 12-step workflows with mandatory approval gates. Lean PMOs build for continuous flow.
+                    </p>
+
+                    <h3 class="font-bold text-slate-900 mb-4">The Standard 5-State Flow</h3>
+                    <div class="flex flex-wrap items-center gap-2 mb-8 font-mono text-sm">
+                        <span class="px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg border border-slate-200">To Do</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i>
+                        <span class="px-3 py-1.5 bg-blue-50 text-blue-600 rounded-lg border border-blue-200">In Progress</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i>
+                        <span class="px-3 py-1.5 bg-yellow-50 text-yellow-600 rounded-lg border border-yellow-200">In Review</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i>
+                        <span class="px-3 py-1.5 bg-emerald-50 text-emerald-600 rounded-lg border border-emerald-200">Done</span>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-6 rounded-xl mb-8 relative overflow-hidden">
+                        <i data-lucide="bot" class="absolute -right-4 -bottom-4 w-32 h-32 text-slate-800 opacity-50"></i>
+                        <h4 class="font-bold text-indigo-300 text-sm uppercase tracking-wider mb-2 relative z-10">The Golden Rule of Workflows</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed relative z-10">
+                            <strong>Automate the Transitions.</strong> Engineers hate dragging cards across a board. Integrate Jira with GitHub/GitLab. When a developer opens a Pull Request, the ticket should automatically move to "In Review". When the PR is merged, it should automatically move to "Done". Make Jira invisible.
+                        </p>
+                    </div>
+
+                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                        <i data-lucide="settings-2" class="w-4 h-4 text-slate-500"></i> Admin Configuration Steps
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-3">Because you smartly chose a Company-Managed project, you must explicitly map your new workflow to your project using <em>Schemes</em>.</p>
+                    <ol class="list-decimal pl-5 space-y-2 text-sm text-slate-700 font-mono">
+                        <li>Go to <span class="bg-slate-100 px-1 rounded border border-slate-200">Settings &rarr; Issues &rarr; Workflows</span> and click <code>Add Workflow</code>.</li>
+                        <li>Go to <span class="bg-slate-100 px-1 rounded border border-slate-200">Settings &rarr; Issues &rarr; Workflow Schemes</span>.</li>
+                        <li>Click <code>Edit &rarr; Assign</code>, and map your new workflow to specific issue types.</li>
+                        <li>Go to <span class="bg-slate-100 px-1 rounded border border-slate-200">Project Settings &rarr; Issue Type Schemes</span> and associate the scheme with your project.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">6</span>
+                    The Interface: Configuring the Board
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        The Jira Board is just a visual overlay of your workflow. Click the <strong>three dots (...)</strong> in the top right of your board and select <code>Configure Board</code> to architect the view.
+                    </p>
+
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">1. Choose the Right Engine</h3>
+                    <div class="grid md:grid-cols-2 gap-4 mb-8">
+                        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                            <strong class="text-slate-900 block mb-1 flex items-center gap-2"><i data-lucide="rotate-cw" class="w-4 h-4 text-indigo-500"></i> Scrum Boards</strong>
+                            <p class="text-sm text-slate-600">Best for predictable product dev. Only shows issues assigned to the active time-boxed Sprint.</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                            <strong class="text-slate-900 block mb-1 flex items-center gap-2"><i data-lucide="layout-columns" class="w-4 h-4 text-emerald-500"></i> Kanban Boards</strong>
+                            <p class="text-sm text-slate-600">Best for continuous flow (Ops/Support). <em>Crucial: Apply WIP (Work In Progress) limits to columns here to expose bottlenecks.</em></p>
+                        </div>
+                    </div>
+
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">2. Map Statuses to Columns</h3>
+                    <p class="text-sm text-slate-600 mb-6">
+                        You do not need a 1:1 ratio. If your workflow has <code>Code Review</code> and <code>QA Review</code> statuses, map them both under a single <strong>"In Review"</strong> column on the board to keep the UI clean for the team.
+                    </p>
+
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">3. Apply Custom JQL Filters (Quick Filters)</h3>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Build "Quick Filters" using JQL (Jira Query Language) so engineers can instantly slice the board. Essential filters to add:
+                    </p>
+                    <ul class="list-none space-y-2 font-mono text-sm bg-slate-800 p-4 rounded-lg text-emerald-400">
+                        <li><span class="text-slate-400">// Show only my tickets</span><br><code>assignee = currentUser()</code></li>
+                        <li class="mt-2"><span class="text-slate-400">// Highlight blocked tickets</span><br><code>issueLinkType = "is blocked by"</code></li>
+                        <li class="mt-2"><span class="text-slate-400">// Show recent updates</span><br><code>updated >= -1d</code></li>
+                    </ul>
+
+                </div>
+            </section>
+
+            <div class="bg-slate-900 rounded-2xl p-10 text-center text-white mb-12 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 20px 20px;"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to scale your architecture?</h3>
+                    <p class="text-slate-400 mb-8 max-w-xl mx-auto text-lg">
+                        Read the follow-up guide on how to hardwire cross-team dependencies and automate your alignment using Jira Advanced Roadmaps.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="/jira_dependency_mapping.html" class="bg-indigo-600 text-white hover:bg-indigo-500 px-8 py-3 rounded-lg font-bold transition-colors inline-flex items-center justify-center gap-2">
+                            <i data-lucide="git-merge" class="w-5 h-5"></i> Read the Dependency Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+     <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+            <p>© 2025 Ayush Jain. All rights reserved.</p>
+            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+                <span class="icon-linkedin-logo"></span>
+                <span>Connect on LinkedIn</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Mobile Menu Script -->
+    <script src="js/nav.js" defer></script>
+</body>
+</html>

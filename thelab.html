@@ -62,6 +62,24 @@
     <!-- Main Content Wrapper -->
     <main class="pt-16 pb-20 px-6">
         <div class="max-w-5xl mx-auto">
+
+             <!-- filter-->
+             <div class="mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+                <h2 class="text-2xl font-bold text-slate-900">Latest Field Notes</h2>
+                
+                <div class="relative w-full md:w-96">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i data-lucide="search" class="w-5 h-5 text-slate-400"></i>
+                    </div>
+                    <input 
+                        type="text" 
+                        id="labSearch" 
+                        class="block w-full pl-10 pr-3 py-2.5 border border-slate-200 rounded-xl leading-5 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-all shadow-sm" 
+                        placeholder="Search topics, tools, or #tags..."
+                    >
+                </div>
+            </div>
+
             <!-- Featured Article (Nexus) -->
              <article class="group relative bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden mb-12">
                 <div class="grid md:grid-cols-2 gap-0">
@@ -87,12 +105,13 @@
                 </div>
             </article>
 
+           
             <!-- Grid Layout for Other Posts -->
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
 
                
                 <!-- Lean PMO -->
-                <a href="modern-pmo.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <a href="modern-pmo.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group lab-card">
                     <div class="flex items-center justify-between mb-6">
                         <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
                             <i data-lucide="shield-check" class="w-6 h-6"></i>
@@ -113,12 +132,38 @@
                     <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100">
                         <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Leadership</span>
                         <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Agile</span>
-                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Strategy</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#PMO</span>
+                    </div>
+                </a>
+
+                <!--Setting up JIRA-->
+                <a href="jira-architecture.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group lab-card">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="server" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-red-600 bg-red-50 px-3 py-1 rounded-full border border-red-100">
+                            Systems Architecture
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-red-600 transition-colors">
+                        Architecting Jira for 2026: The Lean Setup Guide
+                    </h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed flex-1 mb-6">
+                        Jira is the nervous system of your engineering org. Here is the highly opinionated, step-by-step guide to setting up an instance optimized for scaling, flow, and velocity.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100">
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#JIRA</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Operations</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Scaling</span>
                     </div>
                 </a>
 
                  <!-- JIRA Dependencies -->
-                <a href="jira_dependency_mapping.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <a href="jira_dependency_mapping.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group lab-card">
                     <div class="flex items-center justify-between mb-6">
                         <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
                             <i data-lucide="git-merge" class="w-6 h-6"></i>
@@ -137,39 +182,64 @@
                     </p>
                     
                     <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100">
-                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Jira</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#JIRA</span>
                         <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Delivery</span>
                         <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Operations</span>
                     </div>
                 </a>
 
                  <!-- Radar -->
-                <a href="https://ayushjain82.github.io/Radar/" target="_blank" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <a href="https://ayushjain82.github.io/Radar/" target="_blank" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group lab-card">
                     <div class="mb-4 flex items-center justify-between">
-                        <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">                        
+                        <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center text-yellow-600 group-hover:bg-yellow-600 group-hover:text-white transition-colors duration-300">                        
                             <i data-lucide="activity" class="w-5 h-5"></i>
                         </div>
                         
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-yellow-600 bg-yellow-50 px-3 py-1 rounded-full border border-yellow-100">
                             Tools
                         </span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Radar: Interactive RAID Log</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-yellow-600 transition-colors">Radar: Interactive RAID Log</h3>
                     <p class="text-slate-500 text-sm leading-relaxed mb-4">
                        Visualizing risks and blockers for complex programs. Currently in V1.
                     </p>
 
-                     <p class="text-sm leading-relaxed mb-4 font-bold text-indigo-600 group-hover:text-indigo-600 transition-colors">Launch App</p>
-                     <div class="flex items-center gap-2 text-xs font-medium text-slate-400">
-                        <span>#RAID</span>
-                        <span>#Kanban</span>
-                        <span>#Risk</span>
+                     <p class="text-sm leading-relaxed mb-4 font-bold text-blue-600 group-hover:text-blue-600 transition-colors">Launch App</p>
+                     <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100">
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#RAID</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Kanban</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Risk</span>
                     </div>
                 </a>
 
+                <!-- Rovo Integration -->
+                 <a href="rovo-pmo.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group lab-card">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="bot" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full border border-purple-100">
+                            AI Integration
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                        The AI-Powered PMO: Deploying Atlassian Rovo
+                    </h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed flex-1 mb-6">
+                        Stop doing administrative glue work. Learn how to strategically deploy Rovo Search, Chat, and custom Agents to eliminate overhead and accelerate engineering velocity.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100">
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#AtlassianIntelligence</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#JIRA</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Prompts</span>
+                    </div>
+                </a>
 
                 <!-- Vibe Coding -->
-                <a href="vibecoding.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <a href="vibecoding.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group lab-card">
                     
                     <div class="mb-4 flex items-center justify-between">
                         <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">                        
@@ -180,62 +250,63 @@
                         </span>
                     </div>
 
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Vibe Coding: The PM's Superpower</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Vibe Coding: The PM's Superpower</h3>
                     <p class="text-slate-500 text-sm leading-relaxed mb-4">
                         How I stopped waiting for Engineering resources and started prototyping my own internal tools in minutes.
                     </p>
-                    <p class="text-sm leading-relaxed mb-4 font-bold text-indigo-600 group-hover:text-indigo-600 transition-colors">Start Vibing</p>
-                    <div class="flex items-center gap-2 text-xs font-medium text-slate-400">
-                        <span>#AI</span>
-                        <span>#Prototyping</span>
-                        <span>#Vibe</span>
+                    <p class="text-sm leading-relaxed mb-4 font-bold text-blue-600 group-hover:text-blue-600 transition-colors">Start Vibing</p>
+                    <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100">
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#AI</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Prototyping</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Vibe</span>
                     </div>
                     
                 </a>
 
+                
                 <!-- Product to Production -->
-                <a href="product-to-production.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <a href="product-to-production.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-sky-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group lab-card">
                     <div class="mb-4 flex items-center justify-between">
-                        <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">                        
+                        <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">                        
                             <i data-lucide="factory" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full border border-purple-100">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">
                             Leadership Strategy
                         </span>
                     </div>
 
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Product Thinking to Production</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">Product Thinking to Production</h3>
                     <p class="text-slate-500 text-sm leading-relaxed mb-4">
                         Your PRD is optimistic. Production is reality. A strategic guide to shifting focus to reducing integration risk on Day 1.
                     </p>
-                    <p class="text-sm leading-relaxed mb-4 font-bold text-indigo-600 group-hover:text-indigo-600 transition-colors">Shift Focus</p>
-                    <div class="flex items-center gap-2 text-xs font-medium text-slate-400">
-                        <span>#TechnicalStrategy</span>
-                        <span>#ProductDelivery</span>
+                    <p class="text-sm leading-relaxed mb-4 font-bold text-blue-600 group-hover:text-blue-600 transition-colors">Shift Focus</p>
+                    <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100">
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#TechnicalStrategy</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#ProductDelivery</span>
                     </div>
                     
                 </a>
 
                 
                 <!-- Pipeline is a Product -->
-                <a href="pipeline-strategy.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <a href="pipeline-strategy.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-orange-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group lab-card">
                     <div class="mb-4 flex items-center justify-between">
-                        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">                        
+                        <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300">                        
                             <i data-lucide="route" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-red-600 bg-red-50 px-3 py-1 rounded-full border border-red-100">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full border border-orange-100">
                             Platform Strategy
                         </span>
                     </div>
 
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Your Pipeline is a Product</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">Your Pipeline is a Product</h3>
                     <p class="text-slate-500 text-sm leading-relaxed mb-4">Discover the 3 strategic shifts needed to turn your delivery pipeline into a competitive advantage.
                     </p>
-                    <p class="text-sm leading-relaxed mb-4 font-bold text-indigo-600 group-hover:text-indigo-600 transition-colors">Build Effectively</p>
-                    <div class="flex items-center gap-2 text-xs font-medium text-slate-400">
-                        <span>#CI/CD</span>
-                        <span>#Governance</span>
-                        <span>#Delivery</span>
+                    <p class="text-sm leading-relaxed mb-4 font-bold text-blue-600 group-hover:text-blue-600 transition-colors">Build Effectively</p>
+                    <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100">
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#CI/CD</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Governance</span>
+                        <span class="text-xs font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">#Delivery</span>
                     </div>
                     
                 </a>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrating Atlassian Rovo</title>
+     
+      <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="thelab.html" class="hover:text-slate-900 transition-colors">The Lab</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button aria-label="mobile menu" id="mobile-menu-btn"
+                class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+            <div class="flex flex-col p-6 space-y-6">
+                <a href="thelab.html"
+                    class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The
+                    Lab</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <header class="mb-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-200 pb-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">AI Integration</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider">Systems Architecture</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                            Wiring the Brain:<br>
+                            <span class="text-indigo-600">Integrating Rovo into Jira.</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <p class="text-xl text-slate-500 leading-relaxed max-w-3xl">
+                    Turning on Atlassian Rovo is not like installing a spelling checker plug-in. You are grafting a Large Language Model onto your company's proprietary data graph. If you flip the switch without architecting your boundaries, data connectors, and project permissions, you are engineering a disaster. Here is the enterprise playbook for integrating Rovo safely.
+                </p>
+            </header>
+
+            <section class="mb-16 bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 overflow-hidden relative shadow-2xl">
+                <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 max-w-4xl mx-auto">
+                    
+                    <div class="flex flex-col gap-4 w-full md:w-1/3">
+                        <div class="bg-slate-800 border border-slate-700 p-3 rounded-lg flex items-center gap-3 shadow-md">
+                            <i data-lucide="file-text" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-slate-300 text-sm font-medium">Google Drive (PRDs)</span>
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 ml-auto"></i>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 p-3 rounded-lg flex items-center gap-3 shadow-md">
+                            <i data-lucide="github" class="w-5 h-5 text-slate-300"></i>
+                            <span class="text-slate-300 text-sm font-medium">GitHub Repositories</span>
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 ml-auto"></i>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 p-3 rounded-lg flex items-center gap-3 shadow-md">
+                            <i data-lucide="message-square" class="w-5 h-5 text-pink-400"></i>
+                            <span class="text-slate-300 text-sm font-medium">Slack Workspaces</span>
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 ml-auto"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex-shrink-0 relative flex items-center justify-center w-32 h-32">
+                        <div class="absolute inset-0 border-2 border-indigo-500/30 rounded-full animate-ping"></div>
+                        <div class="absolute inset-2 border-2 border-indigo-500/50 rounded-full animate-spin" style="animation-duration: 3s;"></div>
+                        <div class="w-20 h-20 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-full p-1 shadow-[0_0_30px_rgba(99,102,241,0.6)] z-10">
+                            <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
+                                <i data-lucide="brain-circuit" class="w-8 h-8 text-indigo-300"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4 w-full md:w-1/3">
+                        <div class="bg-slate-800 border border-indigo-500/50 p-4 rounded-lg shadow-[0_0_15px_rgba(99,102,241,0.2)]">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-indigo-500/20 text-indigo-300 text-[10px] px-2 py-0.5 rounded font-mono">PROJ: ENG</span>
+                            </div>
+                            <div class="text-slate-200 text-sm font-medium">Rovo Agents: <span class="text-emerald-400">Active</span></div>
+                            <div class="text-slate-400 text-xs mt-1">Grooming & Release Notes</div>
+                        </div>
+                        <div class="bg-slate-800 border border-slate-700 p-4 rounded-lg opacity-50">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-slate-700 text-slate-300 text-[10px] px-2 py-0.5 rounded font-mono">PROJ: HR</span>
+                            </div>
+                            <div class="text-slate-200 text-sm font-medium">Rovo Agents: <span class="text-red-400">Disabled</span></div>
+                            <div class="text-slate-500 text-xs mt-1">Strict Data Boundary</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <div class="prose prose-slate max-w-none text-slate-600 leading-7 text-lg">
+                    <p>
+                        A successful Rovo deployment requires treating the AI not as software, but as a deeply integrated "System User." It needs permissions, it needs access to your data warehouses, and it needs specific instructions on which Jira projects it is allowed to touch.
+                    </p>
+                    <p>
+                        If your PMO tries to launch Rovo to the entire enterprise on a Monday morning without configuring the RBAC (Role-Based Access Control) Graph, you will inevitably have an AI summarizing confidential HR compensation tickets to a junior developer. 
+                    </p>
+                    <p>
+                        Let's walk through the 4-stage architectural integration plan.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">1</span>
+                    The Global Switch: Atlassian Admin Hub
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm border-t-4 border-t-purple-500">
+                    <p class="text-slate-600 mb-6">
+                        Rovo is built on top of the "Atlassian Intelligence" platform. Your absolute first step is organization-wide activation. You must be an Organization Admin to execute this.
+                    </p>
+
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 mb-6 font-mono text-sm">
+                        <ol class="list-decimal pl-5 space-y-3 text-slate-700">
+                            <li>Navigate to <strong>admin.atlassian.com</strong>.</li>
+                            <li>Select your organization and navigate to <strong>Settings &rarr; Atlassian Intelligence</strong>.</li>
+                            <li>Toggle the overarching AI capabilities to <strong>Active</strong>.</li>
+                            <li><span class="text-indigo-600 font-bold">Crucial Step:</span> Review the Data Sharing agreement. Ensure your legal team understands that Atlassian does <em>not</em> use your proprietary tenant data to train public foundation models.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-100 flex gap-3 mb-6">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-purple-900 text-sm block mb-1">The Zero-Trust Data Rule</strong>
+                            <p class="text-sm text-purple-800">
+                                Rovo completely inherits your existing Jira/Confluence permissions. If a user cannot view a ticket manually, Rovo cannot summarize that ticket for them. Before turning Rovo on, audit your Jira Issue Security Schemes to ensure confidential projects (like Legal or HR) are actually locked down.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <i data-lucide="book-open" class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-slate-900 text-sm block mb-1">Official Atlassian Documentation</strong>
+                            <a href="https://support.atlassian.com/organization-administration/docs/activate-atlassian-intelligence/" target="_blank" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium underline">Learn how to activate Atlassian Intelligence in your org &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">2</span>
+                    The Nervous System: Configuring Data Connectors
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        An AI isolated to Jira is just a ticket summarizer. The true power of Rovo Search comes when you connect it to your external SaaS stack. 
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="border border-slate-200 p-5 rounded-xl hover:border-blue-400 transition-colors">
+                            <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-2">
+                                <i data-lucide="database" class="w-4 h-4 text-blue-500"></i> 1. Navigate to Connectors
+                            </h4>
+                            <p class="text-sm text-slate-600">
+                                In Jira Administration, go to <strong>Settings &rarr; Search &rarr; Connectors</strong>. This is where you wire third-party APIs into the Atlassian Teamwork Graph.
+                            </p>
+                        </div>
+                        <div class="border border-slate-200 p-5 rounded-xl hover:border-emerald-400 transition-colors">
+                            <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-2">
+                                <i data-lucide="link-2" class="w-4 h-4 text-emerald-500"></i> 2. Authenticate the App
+                            </h4>
+                            <p class="text-sm text-slate-600">
+                                Connect high-value repositories first: <strong>Google Drive / SharePoint</strong> (for Product Specs), <strong>GitHub/GitLab</strong> (for PR context), and <strong>Figma</strong> (for design).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-5 rounded-lg border-l-4 border-emerald-500 mb-6">
+                        <h4 class="font-bold text-emerald-400 text-sm uppercase tracking-wider mb-2">The Architect's Advice</h4>
+                        <p class="text-sm text-slate-300">
+                            Do <strong>not</strong> connect Slack immediately. Slack is filled with noise, unstructured chatter, and sensitive side-channel conversations. Index your structured document hubs (Confluence, Drive, Figma) first to ensure the AI's baseline knowledge is grounded in official documentation.
+                        </p>
+                    </div>
+
+                    <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <i data-lucide="book-open" class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-slate-900 text-sm block mb-1">Official Atlassian Documentation</strong>
+                            <a href="https://support.atlassian.com/atlassian-intelligence/docs/connect-third-party-data-to-rovo/" target="_blank" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium underline">Learn how to configure third-party data connectors for Rovo Search &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">3</span>
+                    Localization: Project-Level Agent Configuration
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm border-t-4 border-t-blue-500">
+                    <p class="text-slate-600 mb-6">
+                        You do not want every Rovo Agent running wild across every project. An Agent designed to triage Bug reports will wreak havoc if it starts operating on Marketing's campaign board. You must isolate your Agents using JQL scoping.
+                    </p>
+
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">How to scope a Rovo Agent:</h3>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 mb-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="bg-indigo-100 text-indigo-600 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">A</div>
+                                <div>
+                                    <strong class="text-slate-900 text-sm block">Create the Agent in the Hub</strong>
+                                    <span class="text-sm text-slate-600">Go to the Rovo Agent creator. Write your natural language prompt (e.g., "Review tickets for missing Acceptance Criteria").</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="bg-indigo-100 text-indigo-600 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">B</div>
+                                <div>
+                                    <strong class="text-slate-900 text-sm block">Define the Context Boundary</strong>
+                                    <span class="text-sm text-slate-600">In the Agent's "Knowledge & Context" settings, do not leave it set to "Global." Restrict the Agent's vision using specific JQL.</span>
+                                    <div class="mt-2 bg-slate-800 text-emerald-400 font-mono text-xs p-2 rounded">
+                                        project in ("Alpha", "Beta") AND issuetype = "Story"
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="bg-indigo-100 text-indigo-600 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">C</div>
+                                <div>
+                                    <strong class="text-slate-900 text-sm block">Assign Project Automations</strong>
+                                    <span class="text-sm text-slate-600">If the Agent performs actions (like adding comments), bind it to a Jira Automation rule tied to that specific project, triggered by events (e.g., Issue Transitioned) rather than just a time-based cron job.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <i data-lucide="book-open" class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-slate-900 text-sm block mb-1">Official Atlassian Documentation</strong>
+                            <a href="https://support.atlassian.com/atlassian-intelligence/docs/create-and-manage-rovo-agents/" target="_blank" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium underline">Learn how to create, prompt, and manage Rovo Agents &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm">4</span>
+                    The PMO Playbook: The Canary Rollout
+                </h2>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <p class="text-slate-600 mb-6">
+                        Rolling out AI is an exercise in change management. If Rovo hallucinates or disrupts workflows on Day 1, engineers will immediately distrust it and refuse to adopt it. 
+                    </p>
+
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                            <h4 class="font-bold text-slate-900 mb-2">1. The Sandbox</h4>
+                            <p class="text-sm text-slate-600">Create a dummy Jira project. Build your Rovo Agents there first to test their prompt logic. Make sure they don't get stuck in comment-loops.</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-indigo-50 border border-indigo-200">
+                            <h4 class="font-bold text-indigo-900 mb-2">2. The Canary ART</h4>
+                            <p class="text-sm text-slate-700">Select one highly mature Agile Release Train (ART) or Squad. Enable Rovo for their project only. Gather feedback for 2 sprints.</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-emerald-50 border border-emerald-200">
+                            <h4 class="font-bold text-emerald-900 mb-2">3. Enterprise Scale</h4>
+                            <p class="text-sm text-slate-700">Once the prompts are refined and the ROI is proven (e.g., "Rovo saved Product Managers 4 hours a week on release notes"), roll it out globally with a published playbook.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bg-slate-900 rounded-2xl p-10 text-center text-white mb-12 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 20px 20px;"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Your architecture is secure. What's next?</h3>
+                    <p class="text-slate-400 mb-8 max-w-xl mx-auto text-lg">
+                        Now that Rovo is safely integrated, it's time to build your virtual PMO. Grab the exact system prompts and JQL triggers to automate your execution.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="deploying_rovo.html" class="bg-indigo-600 text-white hover:bg-indigo-500 px-8 py-3 rounded-lg font-bold transition-colors inline-flex items-center justify-center gap-2">
+                            <i data-lucide="terminal-square" class="w-5 h-5"></i> Open the Configuration Playbook
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+     <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+            <p>© 2025 Ayush Jain. All rights reserved.</p>
+            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+                <span class="icon-linkedin-logo"></span>
+                <span>Connect on LinkedIn</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Mobile Menu Script -->
+    <script src="js/nav.js" defer></script>
+</body>
+</html>

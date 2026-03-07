@@ -16,3 +16,24 @@ tailwind.config = {
                 }
             }
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('labSearch');
+        const cards = document.querySelectorAll('.lab-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            cards.forEach(card => {
+                // Grabs all the text inside the card (Title, Description, and Tags)
+                const cardContent = card.textContent.toLowerCase();
+
+                // If the card text includes the search term, show it. Otherwise, hide it.
+                if (cardContent.includes(searchTerm)) {
+                    card.style.display = 'flex'; // using flex because your cards use flex-col
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
