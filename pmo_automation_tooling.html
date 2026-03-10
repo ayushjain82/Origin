@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMO Automation Tooling | Origin Strategy</title>
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="thelab.html" class="hover:text-slate-900 transition-colors">The Lab</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button aria-label="mobile menu" id="mobile-menu-btn"
+                class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+            <div class="flex flex-col p-6 space-y-6">
+                <a href="thelab.html"
+                    class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The
+                    Lab</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+        <header class="mb-12">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">PMO Automation Toolkit</h1>
+            <p class="text-lg text-slate-600">Copy and paste these JQL snippets and Jira Automation rules to build your Lean PMO infrastructure instantly.</p>
+        </header>
+
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <i data-lucide="search" class="w-6 h-6 text-indigo-600"></i> Exec Dashboard JQL Snippets
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg">
+                    <div class="bg-slate-800 px-4 py-2 flex items-center justify-between border-b border-slate-700">
+                        <span class="text-slate-300 text-sm font-medium">The "Risk Radar" (Blocked & Flagged)</span>
+                    </div>
+                    <div class="p-4">
+                        <code class="text-emerald-400 font-mono text-sm block">issuetype = Epic AND statusCategory = "In Progress" AND (Flagged = Impediment OR priority = Highest OR labels in ("Risk", "Blocked"))</code>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg">
+                    <div class="bg-slate-800 px-4 py-2 flex items-center justify-between border-b border-slate-700">
+                        <span class="text-slate-300 text-sm font-medium">Scope Creep Alert (Added post-planning)</span>
+                    </div>
+                    <div class="p-4">
+                        <code class="text-emerald-400 font-mono text-sm block">project = "ENG" AND created >= startOfMonth() AND sprint in openSprints()</code>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg">
+                    <div class="bg-slate-800 px-4 py-2 flex items-center justify-between border-b border-slate-700">
+                        <span class="text-slate-300 text-sm font-medium">The Dependency Train Wreck</span>
+                    </div>
+                    <div class="p-4">
+                        <code class="text-emerald-400 font-mono text-sm block">issueLinkType = "is blocked by" AND resolution = Unresolved AND statusCategory != "Done"</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <i data-lucide="zap" class="w-6 h-6 text-amber-500"></i> Jira Automation (A4J) Rules
+            </h2>
+            <p class="text-slate-600 mb-6">Build these rules in <strong>Project Settings > Automation</strong> to eliminate PMO "glue work."</p>
+
+            
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">Rule 1: Auto-Start Epics</h3>
+                    <p class="text-sm text-slate-600 mb-4">When a developer starts the first story, automatically move the parent Epic out of the backlog.</p>
+                    <ul class="text-sm font-mono space-y-2 text-slate-700">
+                        <li><span class="font-bold text-blue-600">WHEN:</span> Issue Transitioned to "In Progress"</li>
+                        <li><span class="font-bold text-blue-600">IF:</span> Issue Type = Story</li>
+                        <li><span class="font-bold text-blue-600">BRANCH:</span> For Parent Epic</li>
+                        <li><span class="font-bold text-blue-600">THEN:</span> Transition Issue to "In Progress"</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+                    <h3 class="font-bold text-slate-900 mb-3 text-lg">Rule 2: Dependency Resolver Alert</h3>
+                    <p class="text-sm text-slate-600 mb-4">Notify Team A instantly when Team B finishes the API they were waiting on.</p>
+                    <ul class="text-sm font-mono space-y-2 text-slate-700">
+                        <li><span class="font-bold text-blue-600">WHEN:</span> Issue Transitioned to "Done"</li>
+                        <li><span class="font-bold text-blue-600">BRANCH:</span> Linked Issues (Type: "Blocks")</li>
+                        <li><span class="font-bold text-blue-600">IF:</span> Status != Done</li>
+                        <li><span class="font-bold text-blue-600">THEN:</span> Add Comment: "Your blocker {{triggerIssue.key}} is complete. You can begin work."</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+     <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+            <p>© 2025 Ayush Jain. All rights reserved.</p>
+            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+                <span class="icon-linkedin-logo"></span>
+                <span>Connect on LinkedIn</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Mobile Menu Script -->
+    <script src="js/nav.js" defer></script>
+</body>
+</html>

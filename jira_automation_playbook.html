@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira Automation Playbook</title>
+     
+      <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="thelab.html" class="hover:text-slate-900 transition-colors">The Lab</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button aria-label="mobile menu" id="mobile-menu-btn"
+                class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+            <div class="flex flex-col p-6 space-y-6">
+                <a href="thelab.html"
+                    class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The
+                    Lab</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+        <header class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-200 text-xs font-bold uppercase tracking-wider font-mono">Systems Architecture</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-4">
+                The Jira Automation <span class="text-indigo-600">Playbook.</span>
+            </h1>
+            <p class="text-xl text-slate-600 leading-relaxed">
+                Jira should work for your team, not the other way around. Automation for Jira (A4J) is the most powerful tool a Program Manager has to eliminate administrative friction and enforce process hygiene silently. Here are the exact rule configurations to build a self-driving PMO.
+            </p>
+        </header>
+
+        
+
+        <section class="mb-16">
+            <div class="flex items-center gap-3 border-b-2 border-blue-500 pb-3 mb-6">
+                <div class="bg-blue-100 text-blue-700 p-2 rounded-lg"><i data-lucide="zap" class="w-6 h-6"></i></div>
+                <h2 class="text-2xl font-bold text-slate-900">1. The Fundamentals (Quick Wins)</h2>
+            </div>
+            <p class="text-slate-600 mb-6">These are low-complexity rules designed to make your engineers' lives easier by eliminating manual board updates.</p>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h3 class="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="github" class="w-5 h-5 text-slate-500"></i> Code-Driven Transitions
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4">Engineers hate dragging tickets. Integrate Jira with GitHub/GitLab and let the code do the talking.</p>
+                    
+                    <ul class="space-y-3 font-mono text-sm bg-slate-50 p-4 rounded-lg border border-slate-100">
+                        <li class="flex items-start gap-3"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold">TRIGGER</span> <span>Pull Request Created</span></li>
+                        <li class="flex items-start gap-3"><span class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded text-xs font-bold">CONDITION</span> <span>Issue Status = "In Progress"</span></li>
+                        <li class="flex items-start gap-3"><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold">ACTION</span> <span>Transition Issue to "In Review"</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h3 class="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="user-check" class="w-5 h-5 text-slate-500"></i> Smart Triage Assignment
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4">Automatically route incoming service desk tickets or bugs to the right tech lead based on the Component.</p>
+                    
+                    <ul class="space-y-3 font-mono text-sm bg-slate-50 p-4 rounded-lg border border-slate-100">
+                        <li class="flex items-start gap-3"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold">TRIGGER</span> <span>Issue Created</span></li>
+                        <li class="flex items-start gap-3"><span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded text-xs font-bold">IF / ELSE</span> <span>Advanced Branching based on Component</span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded text-xs font-bold">CONDITION</span> <span>Component = "Database"</span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold">ACTION</span> <span>Assign to: Sarah Jenkins</span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded text-xs font-bold">CONDITION</span> <span>Component = "Frontend UI"</span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold">ACTION</span> <span>Assign to: David Chen</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center gap-3 border-b-2 border-purple-500 pb-3 mb-6">
+                <div class="bg-purple-100 text-purple-700 p-2 rounded-lg"><i data-lucide="git-merge" class="w-6 h-6"></i></div>
+                <h2 class="text-2xl font-bold text-slate-900">2. Advanced Orchestration</h2>
+            </div>
+            <p class="text-slate-600 mb-6">These rules require cross-project permissions and advanced JQL. They are designed to automate PMO governance and dependency tracking.</p>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 border-l-4 border-l-purple-500">
+                    <h3 class="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="link" class="w-5 h-5 text-slate-500"></i> The Dependency Ping
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4">When a blocking issue is finally resolved, immediately notify the team that was waiting on it so they can resume work.</p>
+                    
+                    <ul class="space-y-3 font-mono text-sm bg-slate-900 text-slate-300 p-4 rounded-lg shadow-inner">
+                        <li class="flex items-start gap-3"><span class="bg-blue-600 text-white px-2 py-0.5 rounded text-xs font-bold">TRIGGER</span> <span>Issue Transitioned to "Done"</span></li>
+                        <li class="flex items-start gap-3"><span class="bg-purple-600 text-white px-2 py-0.5 rounded text-xs font-bold">BRANCH</span> <span>For Linked Issues: Link Type = "Blocks"</span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-slate-700 text-slate-200 px-2 py-0.5 rounded text-xs font-bold">CONDITION</span> <span>Status != "Done"</span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-xs font-bold">ACTION</span> <span>Add Comment: <em>"Hi [~assignee], your blocker {{triggerIssue.key}} is complete. You can begin work."</em></span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-xs font-bold">ACTION</span> <span>Transition Issue to "To Do" (Removes from Blocked status)</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 border-l-4 border-l-indigo-500">
+                    <h3 class="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-slate-500"></i> Epic Auto-Rollup (Bottom-Up)
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4">Ensure your executive roadmaps are accurate. When the last underlying story is closed, automatically close the parent Epic.</p>
+                    
+                    <ul class="space-y-3 font-mono text-sm bg-slate-900 text-slate-300 p-4 rounded-lg shadow-inner">
+                        <li class="flex items-start gap-3"><span class="bg-blue-600 text-white px-2 py-0.5 rounded text-xs font-bold">TRIGGER</span> <span>Issue Transitioned to "Done"</span></li>
+                        <li class="flex items-start gap-3"><span class="bg-purple-600 text-white px-2 py-0.5 rounded text-xs font-bold">BRANCH</span> <span>For Parent Epic</span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-slate-700 text-slate-200 px-2 py-0.5 rounded text-xs font-bold">CONDITION</span> <span>Related Issues (Children): All match JQL <code>statusCategory = Done</code></span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-xs font-bold">ACTION</span> <span>Transition Parent Epic to "Done"</span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-xs font-bold">ACTION</span> <span>Add Comment: <em>"All child stories completed. Epic automatically closed."</em></span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 border-l-4 border-l-rose-500">
+                    <h3 class="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                        <i data-lucide="clock" class="w-5 h-5 text-slate-500"></i> The Stale Issue Sweep (Slack Escalation)
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4">Stop manually chasing people for updates. Let Jira ping Slack automatically when a ticket rots in "In Progress" for too long.</p>
+                    
+                    <ul class="space-y-3 font-mono text-sm bg-slate-900 text-slate-300 p-4 rounded-lg shadow-inner">
+                        <li class="flex items-start gap-3"><span class="bg-amber-500 text-slate-900 px-2 py-0.5 rounded text-xs font-bold">SCHEDULED</span> <span>Every Monday, Wednesday, Friday at 9:00 AM</span></li>
+                        <li class="flex items-start gap-3"><span class="bg-slate-700 text-slate-200 px-2 py-0.5 rounded text-xs font-bold">JQL QUERY</span> <code>status = "In Progress" AND updated <= -5d</code></li>
+                        <li class="flex items-start gap-3"><span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-xs font-bold">ACTION</span> <span>Send Slack Message to <code>#eng-delivery-alerts</code></span></li>
+                        <li class="flex items-start gap-3 ml-8"><span class="text-slate-400">Payload:</span> <span><em>"🚨 <strong>{{issue.key}}</strong> has been In Progress for over 5 days with no updates. Owner: {{issue.assignee.displayName}} - Please review or update."</em></span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="bg-slate-100 rounded-2xl p-6 border border-slate-200 mb-12 flex items-start gap-4">
+            <div class="bg-slate-800 text-white p-2 rounded-lg shrink-0"><i data-lucide="triangle-alert" class="w-6 h-6"></i></div>
+            <div>
+                <h4 class="font-bold text-slate-900 mb-1">The Automation Execution Limit</h4>
+                <p class="text-sm text-slate-600">
+                    If you are on Jira Standard, you have a hard limit of 1,700 automation executions per month. If you write inefficient rules (e.g., triggering on <em>every</em> issue update rather than specific transitions), you will burn through your quota in days. Always constrain your triggers and use precise JQL conditions to prevent runaway loops.
+                </p>
+            </div>
+        </div>
+
+    </main>
+     <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+            <p>© 2025 Ayush Jain. All rights reserved.</p>
+            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+                <span class="icon-linkedin-logo"></span>
+                <span>Connect on LinkedIn</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Mobile Menu Script -->
+    <script src="js/nav.js" defer></script>
+</body>
+</html>
