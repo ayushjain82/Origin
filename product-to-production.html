@@ -8,6 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Thinking to Production</title>
 
+    <meta name="title" content="Product to Production: The SaaS Deployment Playbook | Origin Strategy">
+    <meta name="description" content="Eliminate release-week chaos. A strategic framework for scaling SaaS deployments from 'Code Complete' to 'Live' without the fire drills.">
+    <meta name="keywords" content="SaaS Deployment, DevOps Strategy, Release Management, Technical Program Management, CI/CD Governance, Software Delivery, Ayush Jain">
+    <meta name="author" content="Ayush Jain">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ayushjain82.github.io/Origin/product-to-production.html">
+    <meta property="og:title" content="The Product-to-Production Playbook: SaaS Delivery at Scale">
+    <meta property="og:description" content="Stop deploying on hope. Engineering the operational pipelines that bridge the gap between development and global production.">
+    <meta property="og:image" content="https://ayushjain82.github.io/Origin/assets/images/p2p-playbook-card.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ayushjain82.github.io/Origin/product-to-production.html">
+    <meta property="twitter:title" content="SaaS Deployment: Product to Production Playbook">
+    <meta property="twitter:description" content="A senior leader's guide to removing the human bottleneck in the software release lifecycle.">
+    <meta property="twitter:image" content="https://ayushjain82.github.io/Origin/assets/images/p2p-playbook-card.png">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/styles.css">
@@ -30,10 +47,11 @@
                 <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
             </a>
 
-            <!-- Desktop Menu -->
+             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900 ">
-                <a href="thelab.html" class="font-bold hover:text-indigo-800 transition-colors">The Lab</a>
+                <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors  ">The Lab</a>
             </div>
+
 
             <!-- Mobile Menu Button -->
             <button aria-label="mobile menu" id="mobile-menu-btn"
@@ -363,11 +381,39 @@
                         <h3 class="text-xl font-bold text-slate-900">Refine your delivery pipeline.</h3>
                         <p class="text-slate-500 mt-2">Stop optimizing the PRD. Start optimizing the deploy.</p>
                     </div>
-                    <a href="pipeline-strategy.html" class="bg-slate-900 text-white hover:bg-slate-800 px-6 py-3 rounded-lg font-bold transition-colors inline-flex items-center gap-2">
+                    <a href="pipeline-strategy.html" class="bg-blue-900 text-white hover:bg-slate-800 px-6 py-3 rounded-lg font-bold transition-colors inline-flex items-center gap-2">
                         <i data-lucide="book-open-text" class="w-4 h-4"></i>  Read the TPM Guide
                     </a>
                 </div>
             </div>
+
+            <!-- share -->
+            <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="text-center sm:text-left">
+                    <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
+                    <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <button onclick="shareToLinkedIn()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on LinkedIn">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </button>
+                    
+                    <button onclick="shareToTwitter()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on Twitter">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </button>
+
+                    <button onclick="shareToEmail()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share via Email">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </button>
+
+                    <button onclick="copyToClipboard()" id="copyBtn" class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm">
+                        <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
+                        <span id="copyText">Copy Link</span>
+                    </button>
+                </div>
+            </div>
+            <!-- share ends-->
 
         </div>
     </main>
@@ -383,7 +429,8 @@
         </div>
     </footer>
 
-    <!-- Initialize Icons & Mobile Menu Script -->
+    <!-- Initialize Share, Icons & Mobile Menu Script -->     
+    <script src="js/share.js" defer></script>
     <script src="js/nav.js" defer></script>
 </body>
 
