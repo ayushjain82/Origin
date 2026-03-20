@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lab | Strategy & Product</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#1e293b', // Custom dark
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        /* Hide scrollbar for clean horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+            </a>
+
+            <!-- Desktop Menu - ->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="#" class="hover:text-slate-900 transition-colors">Projects</a>
+                <a href="#" class="text-slate-900">Writing</a>
+                <a href="#" class="hover:text-slate-900 transition-colors">About</a>
+                <a href="https://github.com/ayushjain82" target="_blank" class="hover:text-slate-900 transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+            </div> -->
+
+            <!-- Mobile Menu Button -- >
+            <button class="md:hidden text-slate-500 hover:text-slate-900">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>-->
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Hero Section -->
+            <header class="mb-16 md:mb-24">
+                <!-- text-3xl md:text-4xl font-bold mb-8 text-center -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                    Engineering <span class="text-slate-400">&amp;</span> Strategy.
+                </h1>
+                <p class="text-xl text-slate-300 max-w-2xl leading-relaxed">
+                    A collection of artifacts, product roadmaps, and thoughts on building software in the age of AI.
+                </p>
+                
+                <!-- Filter Tabs -->
+                <div class="flex gap-2 mt-10 overflow-x-auto no-scrollbar pb-2">
+                    <button class="px-4 py-2 bg-slate-900 text-white rounded-full text-sm font-medium whitespace-nowrap">All Posts</button>
+                    <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-medium hover:border-slate-400 transition-colors whitespace-nowrap">Product Mgmt</button>
+                    <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-medium hover:border-slate-400 transition-colors whitespace-nowrap">Vibe Coding</button>
+                    <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-medium hover:border-slate-400 transition-colors whitespace-nowrap">Strategy</button>
+                </div>
+            </header>
+
+            <!-- Featured Article (Big Card) -->
+            <article class="group relative bg-gray-800 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden mb-12">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="h-64 md:h-auto bg-slate-100 overflow-hidden relative">
+                        <!-- Placeholder for Hero Image -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-blue-100 flex items-center justify-center">
+                            <img src="assets/nexusPlan.png" alt="Logic Over Layout" class="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="p-8 md:p-10 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">Featured</span>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-200 mb-4">
+                            Start Managing Dependencies
+                        </h2>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            A program roadmap tool that prioritizes logic over layout, saving Program Managers from "PowerPoint Purgatory.
+                        </p>
+                        <a href="nexusplan.html" class="inline-flex items-center text-sm font-bold text-indigo-300 hover:text-indigo-800 transition-colors">
+                            Read More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Grid Layout for Other Posts -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Card 1 -->
+                <a href="#" class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300">
+                    <div class="mb-4 flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                            <i data-lucide="activity" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Velocity is a Vanity Metric</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        Why measuring points encourages teams to do "easy work" rather than "valuable work," and what to track instead.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-400">
+                        <span>#Agile</span>
+                        <span>#Metrics</span>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="#" class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300">
+                    <div class="mb-4 flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                            <i data-lucide="code-2" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Vibe Coding: The PM's Superpower</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        How I stopped waiting for Engineering resources and started prototyping my own internal tools in minutes.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-400">
+                        <span>#AI</span>
+                        <span>#Prototyping</span>
+                    </div>
+                    <p class="status-badge status-inner">Coming Soon</p>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="#" class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300">
+                    <div class="mb-4 flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">The Future of Checkout</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        Building 'PayPulse': An intelligent agent that actively works to close sales and reduce fraud.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-400">
+                        <span>#Product</span>
+                        <span>#Fintech</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- WIP Section (From our previous chat) -->
+            <div class="mt-20">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="h-px bg-slate-200 flex-1"></div>
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Work In Progress</span>
+                    <div class="h-px bg-slate-200 flex-1"></div>
+                </div>
+
+                <div class="bg-slate-100 rounded-2xl p-8 border border-slate-200/60">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="flex gap-4">
+                            <div class="mt-1">
+                                <i data-lucide="flask-conical" class="w-5 h-5 text-slate-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Flux: RICE Score Calculator</h4>
+                                <p class="text-sm text-slate-500 mt-1">A visual calculator for Reach, Impact, Confidence, and Effort. Prototyping phase.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1">
+                                <i data-lucide="radar" class="w-5 h-5 text-slate-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Radar: Interactive RAID Log</h4>
+                                <p class="text-sm text-slate-500 mt-1">Visualizing risks and blockers for complex programs. Currently in V1.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+        <p>© 2025 Ayush Jain. All rights reserved.</p>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
