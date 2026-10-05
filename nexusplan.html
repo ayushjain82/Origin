@@ -1,305 +1,370 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M09DCB9XPN"></script>
     <script async src="js/ga.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexus Plan | Logic Over Layout</title>
 
-    <meta name="title" content="The Nexus Plan | Strategic Delivery Framework | Origin Strategy">
-    <meta name="description" content="An executive framework for bridging business strategy with engineering execution. Master cross-functional dependencies and drive product outcomes.">
-    <meta name="keywords" content="Nexus Plan, Strategic Alignment, Program Execution, Product Outcomes, Cross-functional Leadership, Enterprise Agile, E-commerce Tech">
-    <meta name="author" content="Ayush Jain">
+    <meta name="title" content="The Nexus Plan | Strategic Delivery Framework | Origin Strategy" />
+    <meta
+      name="description"
+      content="An executive framework for bridging business strategy with engineering execution. Master cross-functional dependencies and drive product outcomes."
+    />
+    <meta
+      name="keywords"
+      content="Nexus Plan, Strategic Alignment, Program Execution, Product Outcomes, Cross-functional Leadership, Enterprise Agile, E-commerce Tech"
+    />
+    <meta name="author" content="Ayush Jain" />
 
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ayushjain82.github.io/Origin/nexusplan.html">
-    <meta property="og:title" content="The Nexus Plan: Engineering Strategic Alignment">
-    <meta property="og:description" content="How to translate high-level executive strategy into predictable, technical reality without turning your teams into a feature factory.">
-    <meta property="og:image" content="https://ayushjain82.github.io/Origin/images/nexus-plan-card.jpg">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://ayushjain82.github.io/Origin/nexusplan.html" />
+    <meta property="og:title" content="The Nexus Plan: Engineering Strategic Alignment" />
+    <meta
+      property="og:description"
+      content="How to translate high-level executive strategy into predictable, technical reality without turning your teams into a feature factory."
+    />
+    <meta property="og:image" content="https://ayushjain82.github.io/Origin/images/nexus-plan-card.jpg" />
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ayushjain82.github.io/Origin/nexusplan.html">
-    <meta property="twitter:title" content="The Nexus Plan: Engineering Strategic Alignment">
-    <meta property="twitter:description" content="How to translate high-level executive strategy into predictable, technical reality without turning your teams into a feature factory.">
-    <meta property="twitter:image" content="https://ayushjain82.github.io/Origin/images/nexus-plan-card.jpg">
-     
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ayushjain82.github.io/Origin/nexusplan.html" />
+    <meta property="twitter:title" content="The Nexus Plan: Engineering Strategic Alignment" />
+    <meta
+      property="twitter:description"
+      content="How to translate high-level executive strategy into predictable, technical reality without turning your teams into a feature factory."
+    />
+    <meta property="twitter:image" content="https://ayushjain82.github.io/Origin/images/nexus-plan-card.jpg" />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="js/tailwind-config.js"></script>
-</head>
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
-
-   <!-- Navigation -->
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- Logo / Brand -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
-                    <i data-lucide="layers" class="w-5 h-5"></i>
-                </div>
-                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
-            </a>
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- Logo / Brand -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+        </a>
 
-             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900 ">
-                <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors  ">The Lab</a>
-            </div>
-
-
-            <!-- Mobile Menu Button -->
-            <button aria-label="mobile menu" id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900">
+          <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors">The Lab</a>
         </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
-            <div class="flex flex-col p-6 space-y-6">
-                <a href="thelab.html" class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The Lab</a>
-            </div>
+
+        <!-- Mobile Menu Button -->
+        <button aria-label="mobile menu" id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+        <div class="flex flex-col p-6 space-y-6">
+          <a href="thelab.html" class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The Lab</a>
         </div>
+      </div>
     </nav>
 
-
     <!-- Article Wrapper -->
-   <main class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
+    <main class="pt-32 pb-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="mb-12">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">Product Case Study</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
+            Stop Drawing Rectangles.<br />
+            <span class="text-indigo-600">Start Managing Dependencies.</span>
+          </h1>
+          <p class="text-xl text-slate-500 leading-relaxed">
+            Why I envisioned <strong>Nexus Plan</strong>: A program roadmap tool that prioritizes logic over layout, saving Program Managers from
+            "PowerPoint Purgatory."
+          </p>
+        </header>
 
-            <!-- Header -->
-            <header class="mb-12">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">Product Case Study</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
-                    Stop Drawing Rectangles.<br>
-                    <span class="text-indigo-600">Start Managing Dependencies.</span>
-                </h1>
-                <p class="text-xl text-slate-500 leading-relaxed">
-                    Why I envisioned <strong>Nexus Plan</strong>: A program roadmap tool that prioritizes logic over layout, saving Program Managers from "PowerPoint Purgatory."
-                </p>
-            </header>
-
-            <!-- Hero Image Placeholder -->
-            <div class="w-full h-45 md:h-[485px] bg-slate-100 rounded-2xl border border-slate-200 flex items-center justify-center mb-12 overflow-hidden shadow-sm relative group">
-                <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white"></div>
-                <div class="relative text-center">
-                  <a href="https://ayushjain82.github.io/NexusPlan/" target="_blank"><img src="assets/nexusPlan.png" alt="Nexus Plan" class="max-h-full max-w-full object-contain rounded-lg shadow-md border border-slate-200"></a>
-                </div>
-            </div>
-
-             <!-- Call to Action -->
-            <div class="bg-slate-900 rounded-2xl p-8 text-center text-white mb-12">
-                <h3 class="text-2xl font-bold mb-4">Try Nexus Plan</h3>
-                <p class="text-slate-400 mb-8 max-w-lg mx-auto">
-                    Open source, built with React + Vite, and ready for your next big program launch.
-                </p>
-                <div class="flex justify-center gap-4">
-                    <a href="https://github.com/ayushjain82/NexusPlan" target="_blank" class="bg-white text-slate-900 hover:bg-indigo-50 px-6 py-3 rounded-lg font-bold transition-colors inline-flex items-center gap-2">
-                        <i data-lucide="github" class="w-4 h-4"></i> View Code
-                    </a>
-                    <a href="https://ayushjain82.github.io/NexusPlan/" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-bold transition-colors">
-                        Launch App
-                    </a>
-                </div>
-            </div>
-
-            <!-- Content: The Why -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <i data-lucide="help-circle" class="w-6 h-6 text-indigo-600"></i> The "Why"
-                </h2>
-                <div class="prose prose-slate max-w-none text-slate-600 leading-7">
-                    <p class="mb-4">
-                        The job of a Program Manager is often reduced to <strong>"Box Moving."</strong> You spend hours in PowerPoint or Excel, manually resizing shapes because the Backend team delayed their API by one week.
-                    </p>
-                    <p class="mb-6">
-                        Existing tools fall into two traps:
-                    </p>
-                    <ul class="list-disc pl-5 space-y-2 mb-8">
-                        <li><strong>Too Simple (Miro/PPT):</strong> Great for visuals, but zero logic. If Task A moves, Task B stays put, creating a "lie" on your roadmap.</li>
-                        <li><strong>Too Complex (MS Project/Jira):</strong> Data graveyards. They require so much configuration that nobody updates them, leading to stale data.</li>
-                    </ul>
-                    
-                    <!-- Styled Quote Block -->
-                    <div class="p-6 md:p-8 bg-white rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-indigo-500"></div>
-                        <i data-lucide="quote" class="w-8 h-8 text-indigo-100 absolute top-4 right-4"></i>
-                        <p class="text-lg font-medium text-slate-800 italic relative z-10">
-                            "We need a tool that thinks like a Program Manager: Aware of dependencies, sensitive to risks, but simple enough to use in a boardroom."
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Content: The What -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <i data-lucide="zap" class="w-6 h-6 text-indigo-600"></i> The "What"
-                </h2>
-                <div class="prose prose-slate max-w-none text-slate-600 leading-7">
-                    <p class="mb-6">
-                        <strong>Nexus Plan</strong> is an interactive, dependency-aware roadmap engine built with React. It automates the tedious parts of scheduling so you can focus on the strategy.
-                    </p>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="p-5 rounded-xl border border-slate-200 bg-white hover:border-indigo-300 transition-colors">
-                            <div class="font-bold text-slate-900 mb-1 flex items-center gap-2">
-                                <i data-lucide="calendar" class="w-4 h-4 text-indigo-500"></i> Dynamic Timeline
-                            </div>
-                            <div class="text-sm">Seamlessly toggle between Week view (execution) and Quarter view (strategy).</div>
-                        </div>
-                        <div class="p-5 rounded-xl border border-slate-200 bg-white hover:border-red-300 transition-colors">
-                            <div class="font-bold text-slate-900 mb-1 flex items-center gap-2">
-                                <i data-lucide="alert-circle" class="w-4 h-4 text-red-500"></i> Live Risk Detection
-                            </div>
-                            <div class="text-sm">The system calculates slippage in real-time. If a task pushes past the deadline, it glows red.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Content: Key Differentiators (Highlighted Section) -->
-            <section class="mb-12 bg-slate-100 rounded-3xl p-8 md:p-12 border border-slate-200/60">
-                <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                    <div class="bg-white p-2 rounded-lg shadow-sm">
-                        <i data-lucide="layers" class="w-6 h-6 text-indigo-600"></i>
-                    </div>
-                    Product Highlights
-                </h2>
-                
-                <div class="space-y-8">
-                    <!-- Highlight 1 -->
-                    <div class="flex gap-5 items-start">
-                        <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-blue-600 font-bold text-lg">1</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Elastic Dependencies</h3>
-                            <p class="text-slate-600 mt-2 text-lg leading-relaxed">
-                                In most tools, lines are just drawings. In Nexus Plan, they are <strong>physics</strong>. 
-                                <br>If you drag a "Blocker" task forward, every dependent task across every component shifts automatically. It prevents the "impossible schedule" fallacy.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Highlight 2 -->
-                    <div class="flex gap-5 items-start">
-                        <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-purple-600 font-bold text-lg">2</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">The "Tetris" Layout Engine</h3>
-                            <p class="text-slate-600 mt-2 text-lg leading-relaxed">
-                                Stop manually adjusting vertical spacing. Our custom layout engine analyzes overlapping tasks and automatically stacks them into lanes, ensuring nothing ever hides behind another task. It's clean by default.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Highlight 3 -->
-                    <div class="flex gap-5 items-start">
-                        <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-emerald-600 font-bold text-lg">3</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Draft & Commit Mode</h3>
-                            <p class="text-slate-600 mt-2 text-lg leading-relaxed">
-                                Adding complex components shouldn't be stressful. We built a "Draft Mode" that lets you stage components, activities, and milestones before committing them to the roadmap.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Content: Future Capabilities -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                    <i data-lucide="telescope" class="w-6 h-6 text-indigo-600"></i> Recommended Future Capabilities
-                </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mb-4 group-hover:bg-indigo-100 transition-colors">
-                            <i data-lucide="brain-circuit" class="w-5 h-5 text-indigo-600"></i>
-                        </div>
-                        <div class="font-bold text-slate-900 mb-2">AI Risk Prediction</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">Train machine learning models on historical project data to flag "Watermelon" statuses (Green on outside, Red on inside) before they delay launch.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
-                            <i data-lucide="refresh-cw" class="w-5 h-5 text-blue-600"></i>
-                        </div>
-                        <div class="font-bold text-slate-900 mb-2">Bi-Directional Sync</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">Real-time integration with Jira and Azure DevOps. Move a card in Nexus Plan, and the corresponding Epic or Feature updates instantly.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-4 group-hover:bg-purple-100 transition-colors">
-                            <i data-lucide="users" class="w-5 h-5 text-purple-600"></i>
-                        </div>
-                        <div class="font-bold text-slate-900 mb-2">Resource Heatmaps</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">Overlay capacity data on top of the timeline to spot bottlenecks where a single Principal Engineer is blocking three critical paths.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center mb-4 group-hover:bg-emerald-100 transition-colors">
-                            <i data-lucide="message-square" class="w-5 h-5 text-emerald-600"></i>
-                        </div>
-                        <div class="font-bold text-slate-900 mb-2">Natural Language Scheduling</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">"Shift the Backend migration by 2 weeks." Type it into a command bar, and watch the entire dependency chain adjust automatically.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Footnote / Disclaimer -->
-            <div class="mb-12 border-t border-slate-200 pt-6">
-                <div class="flex gap-2 text-slate-500">
-                    <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
-                    <p class="text-xs leading-relaxed">
-                        <strong>Prototype Status:</strong> This project is a thought experiment in progress. The code provided is a prototype to demonstrate the product mindset and layout engine logic. It is not a fully activated SaaS product and may contain bugs or incomplete features.
-                    </p>
-                </div>
-            </div>
-            
-           
-
-       <!-- share -->
-            <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div class="text-center sm:text-left">
-                    <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
-                    <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
-                </div>
-                
-                <div class="flex items-center gap-3">
-                    <button onclick="shareToLinkedIn()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on LinkedIn">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </button>
-                    
-                    <button onclick="shareToTwitter()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on Twitter">
-                        <i data-lucide="twitter" class="w-5 h-5"></i>
-                    </button>
-
-                    <button onclick="shareToEmail()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share via Email">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                    </button>
-
-                    <button onclick="copyToClipboard()" id="copyBtn" class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm">
-                        <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
-                        <span id="copyText">Copy Link</span>
-                    </button>
-                </div>
-            </div>
-            <!-- share ends-->
-
+        <!-- Hero Image Placeholder -->
+        <div
+          class="w-full h-45 md:h-[485px] bg-slate-100 rounded-2xl border border-slate-200 flex items-center justify-center mb-12 overflow-hidden shadow-sm relative group"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white"></div>
+          <div class="relative text-center">
+            <a href="https://ayushjain82.github.io/NexusPlan/" target="_blank"
+              ><img
+                src="assets/nexusPlan.png"
+                alt="Nexus Plan"
+                class="max-h-full max-w-full object-contain rounded-lg shadow-md border border-slate-200"
+            /></a>
+          </div>
         </div>
+
+        <!-- Call to Action -->
+        <div class="bg-slate-900 rounded-2xl p-8 text-center text-white mb-12">
+          <h3 class="text-2xl font-bold mb-4">Try Nexus Plan</h3>
+          <p class="text-slate-400 mb-8 max-w-lg mx-auto">Open source, built with React + Vite, and ready for your next big program launch.</p>
+          <div class="flex justify-center gap-4">
+            <a
+              href="https://github.com/ayushjain82/NexusPlan"
+              target="_blank"
+              class="bg-white text-slate-900 hover:bg-indigo-50 px-6 py-3 rounded-lg font-bold transition-colors inline-flex items-center gap-2"
+            >
+              <i data-lucide="github" class="w-4 h-4"></i> View Code
+            </a>
+            <a
+              href="https://ayushjain82.github.io/NexusPlan/"
+              target="_blank"
+              class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-bold transition-colors"
+            >
+              Launch App
+            </a>
+          </div>
+        </div>
+
+        <!-- Content: The Why -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-6 h-6 text-indigo-600"></i> The "Why"
+          </h2>
+          <div class="prose prose-slate max-w-none text-slate-600 leading-7">
+            <p class="mb-4">
+              The job of a Program Manager is often reduced to <strong>"Box Moving."</strong> You spend hours in PowerPoint or Excel, manually
+              resizing shapes because the Backend team delayed their API by one week.
+            </p>
+            <p class="mb-6">Existing tools fall into two traps:</p>
+            <ul class="list-disc pl-5 space-y-2 mb-8">
+              <li>
+                <strong>Too Simple (Miro/PPT):</strong> Great for visuals, but zero logic. If Task A moves, Task B stays put, creating a "lie" on your
+                roadmap.
+              </li>
+              <li>
+                <strong>Too Complex (MS Project/Jira):</strong> Data graveyards. They require so much configuration that nobody updates them, leading
+                to stale data.
+              </li>
+            </ul>
+
+            <!-- Styled Quote Block -->
+            <div class="p-6 md:p-8 bg-white rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-1 h-full bg-indigo-500"></div>
+              <i data-lucide="quote" class="w-8 h-8 text-indigo-100 absolute top-4 right-4"></i>
+              <p class="text-lg font-medium text-slate-800 italic relative z-10">
+                "We need a tool that thinks like a Program Manager: Aware of dependencies, sensitive to risks, but simple enough to use in a
+                boardroom."
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Content: The What -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <i data-lucide="zap" class="w-6 h-6 text-indigo-600"></i> The "What"
+          </h2>
+          <div class="prose prose-slate max-w-none text-slate-600 leading-7">
+            <p class="mb-6">
+              <strong>Nexus Plan</strong> is an interactive, dependency-aware roadmap engine built with React. It automates the tedious parts of
+              scheduling so you can focus on the strategy.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="p-5 rounded-xl border border-slate-200 bg-white hover:border-indigo-300 transition-colors">
+                <div class="font-bold text-slate-900 mb-1 flex items-center gap-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-indigo-500"></i> Dynamic Timeline
+                </div>
+                <div class="text-sm">Seamlessly toggle between Week view (execution) and Quarter view (strategy).</div>
+              </div>
+              <div class="p-5 rounded-xl border border-slate-200 bg-white hover:border-red-300 transition-colors">
+                <div class="font-bold text-slate-900 mb-1 flex items-center gap-2">
+                  <i data-lucide="alert-circle" class="w-4 h-4 text-red-500"></i> Live Risk Detection
+                </div>
+                <div class="text-sm">The system calculates slippage in real-time. If a task pushes past the deadline, it glows red.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Content: Key Differentiators (Highlighted Section) -->
+        <section class="mb-12 bg-slate-100 rounded-3xl p-8 md:p-12 border border-slate-200/60">
+          <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div class="bg-white p-2 rounded-lg shadow-sm">
+              <i data-lucide="layers" class="w-6 h-6 text-indigo-600"></i>
+            </div>
+            Product Highlights
+          </h2>
+
+          <div class="space-y-8">
+            <!-- Highlight 1 -->
+            <div class="flex gap-5 items-start">
+              <div
+                class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-blue-600 font-bold text-lg"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">Elastic Dependencies</h3>
+                <p class="text-slate-600 mt-2 text-lg leading-relaxed">
+                  In most tools, lines are just drawings. In Nexus Plan, they are <strong>physics</strong>. <br />If you drag a "Blocker" task
+                  forward, every dependent task across every component shifts automatically. It prevents the "impossible schedule" fallacy.
+                </p>
+              </div>
+            </div>
+
+            <!-- Highlight 2 -->
+            <div class="flex gap-5 items-start">
+              <div
+                class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-purple-600 font-bold text-lg"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">The "Tetris" Layout Engine</h3>
+                <p class="text-slate-600 mt-2 text-lg leading-relaxed">
+                  Stop manually adjusting vertical spacing. Our custom layout engine analyzes overlapping tasks and automatically stacks them into
+                  lanes, ensuring nothing ever hides behind another task. It's clean by default.
+                </p>
+              </div>
+            </div>
+
+            <!-- Highlight 3 -->
+            <div class="flex gap-5 items-start">
+              <div
+                class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-emerald-600 font-bold text-lg"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">Draft & Commit Mode</h3>
+                <p class="text-slate-600 mt-2 text-lg leading-relaxed">
+                  Adding complex components shouldn't be stressful. We built a "Draft Mode" that lets you stage components, activities, and milestones
+                  before committing them to the roadmap.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Content: Future Capabilities -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <i data-lucide="telescope" class="w-6 h-6 text-indigo-600"></i> Recommended Future Capabilities
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
+              <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mb-4 group-hover:bg-indigo-100 transition-colors">
+                <i data-lucide="brain-circuit" class="w-5 h-5 text-indigo-600"></i>
+              </div>
+              <div class="font-bold text-slate-900 mb-2">AI Risk Prediction</div>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Train machine learning models on historical project data to flag "Watermelon" statuses (Green on outside, Red on inside) before they
+                delay launch.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
+              <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
+                <i data-lucide="refresh-cw" class="w-5 h-5 text-blue-600"></i>
+              </div>
+              <div class="font-bold text-slate-900 mb-2">Bi-Directional Sync</div>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Real-time integration with Jira and Azure DevOps. Move a card in Nexus Plan, and the corresponding Epic or Feature updates instantly.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
+              <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-4 group-hover:bg-purple-100 transition-colors">
+                <i data-lucide="users" class="w-5 h-5 text-purple-600"></i>
+              </div>
+              <div class="font-bold text-slate-900 mb-2">Resource Heatmaps</div>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Overlay capacity data on top of the timeline to spot bottlenecks where a single Principal Engineer is blocking three critical paths.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
+              <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center mb-4 group-hover:bg-emerald-100 transition-colors">
+                <i data-lucide="message-square" class="w-5 h-5 text-emerald-600"></i>
+              </div>
+              <div class="font-bold text-slate-900 mb-2">Natural Language Scheduling</div>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                "Shift the Backend migration by 2 weeks." Type it into a command bar, and watch the entire dependency chain adjust automatically.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footnote / Disclaimer -->
+        <div class="mb-12 border-t border-slate-200 pt-6">
+          <div class="flex gap-2 text-slate-500">
+            <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+            <p class="text-xs leading-relaxed">
+              <strong>Prototype Status:</strong> This project is a thought experiment in progress. The code provided is a prototype to demonstrate the
+              product mindset and layout engine logic. It is not a fully activated SaaS product and may contain bugs or incomplete features.
+            </p>
+          </div>
+        </div>
+
+        <!-- share -->
+        <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-center sm:text-left">
+            <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
+            <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              onclick="shareToLinkedIn()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on LinkedIn"
+            >
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="shareToTwitter()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on Twitter"
+            >
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="shareToEmail()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share via Email"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="copyToClipboard()"
+              id="copyBtn"
+              class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm"
+            >
+              <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
+              <span id="copyText">Copy Link</span>
+            </button>
+          </div>
+        </div>
+        <!-- share ends-->
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
-            <p>© 2025 Ayush Jain. All rights reserved.</p>
-            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
-                <span class="icon-linkedin-logo"></span>
-                <span>Connect on LinkedIn</span>
-            </a>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+        <p>© 2025 Ayush Jain. All rights reserved.</p>
+        <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+          <span class="icon-linkedin-logo"></span>
+          <span>Connect on LinkedIn</span>
+        </a>
+      </div>
     </footer>
 
-    <!-- Initialize Share, Icons & Mobile Menu Script -->     
+    <!-- Initialize Share, Icons & Mobile Menu Script -->
     <script src="js/share.js" defer></script>
     <script src="js/nav.js" defer></script>
-</body>
-
+  </body>
 </html>

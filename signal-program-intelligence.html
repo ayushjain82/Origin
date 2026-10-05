@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M09DCB9XPN"></script>
+    <script async src="js/ga.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SignalPath — AI Program Intelligence</title>
+    <meta
+      name="description"
+      content="SignalPath — an exploration of AI-native program intelligence for Technical Program Managers. A working prototype on synthetic data, with a simulation you can run in the page. Source code private."
+    />
+    <link rel="canonical" href="https://ayushjain82.github.io/signal-program-intelligence/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="What if your program could tell you what changed?" />
+    <meta
+      property="og:description"
+      content="An exploration of AI-native program intelligence for TPMs — with a working simulation. Synthetic data, no live systems, code private."
+    />
+    <meta property="og:url" content="https://ayushjain82.github.io/signal-program-intelligence/" />
+    <meta property="og:image" content="https://ayushjain82.github.io/assets/signal-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/tailwind-config.js"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- Logo / Brand -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900">
+          <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors">The Lab</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button aria-label="mobile menu" id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+        <div class="flex flex-col p-6 space-y-6">
+          <a href="thelab.html" class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The Lab</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-5 px-6">
+      <div class="max-w-5xl mx-auto">
+        <header>
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-200 pb-8">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider"
+                  >An exploration of AI-native program management</span
+                >
+              </div>
+              <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                What if your program could<br />
+                <span class="text-indigo-600">tell you what changed?</span>
+              </h1>
+            </div>
+          </div>
+
+          <p class="text-xl text-slate-500 leading-relaxed max-w-3xl mb-4">
+            SignalPath explores a different role for AI in program management: not another status generator, but an intelligence layer that connects
+            fragmented signals and helps a TPM understand what changed, why it matters, and where to act.
+          </p>
+          <div class="flex justify-left gap-4">
+            <a
+              href="#problem"
+              class="bg-white text-slate-900 hover:bg-indigo-50 px-6 py-3 rounded-lg font-bold transition-colors inline-flex items-center gap-2 border border-indigo-500 p-6 rounded-2xl"
+              >Explore the concept ↓
+            </a>
+            <a
+              href="https://claude.ai/artifact/QppSLfqftmJbD9FNe4rS76"
+              target="_blank"
+              class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-bold transition-colors"
+              rel="noopener noreferrer"
+            >
+              View working prototype ↗
+            </a>
+          </div>
+          <div class="border-b border-slate-200 pb-8">
+            <p class="herostatus">Working prototype · Synthetic data · Private source code · No live enterprise integrations</p>
+            <div class="flow">
+              <div class="pill">Jira</div>
+              <div class="arrow">→</div>
+              <div class="pill">Slack</div>
+              <div class="arrow">→</div>
+              <div class="pill">Evidence</div>
+              <div class="arrow">→</div>
+              <div class="pill" style="border-color: #a5b4fc; background: #eef2ff; color: #4338ca">Program Intelligence</div>
+            </div>
+          </div>
+        </header>
+        <div class="mb-10" id="problem">&nbsp;</div>
+        <section class="mb-12">
+          <div class="wrap">
+            <div class="kicker font-bold text-indigo-800">01 — The TPM problem</div>
+            <h2 class="font-bold">The information usually exists. The problem is connecting it.</h2>
+            <p class="sectionintro">
+              A formal date lives in a ticket. A newer forecast appears in a conversation. A dependency is mentioned in a meeting. The launch plan
+              lives somewhere else. The TPM becomes the integration layer.
+            </p>
+            <div class="grid4">
+              <div class="card">
+                <div class="src">Formal ticket</div>
+                <h3>Profile API GA</h3>
+                <div class="date mb-2">Oct 26</div>
+                <p>Current formal commitment.</p>
+              </div>
+              <div class="card">
+                <div class="src">Newer team signal</div>
+                <h3>Latest forecast</h3>
+                <div class="date red mb-2">~Nov 15</div>
+                <p>Confidence in Oct 26 has changed.</p>
+              </div>
+              <div class="card">
+                <div class="src">Program plan</div>
+                <h3>Production need-by</h3>
+                <div class="date amber mb-2">Nov 9</div>
+                <p>Needed to preserve readiness runway.</p>
+              </div>
+              <div class="card">
+                <div class="src">Engineering</div>
+                <h3>UAT stub available</h3>
+                <div class="date green mb-2">Oct 10</div>
+                <p>UAT does not need the real API.</p>
+              </div>
+            </div>
+            <div class="callout">
+              The interesting question isn't “Which date is red?” It is: <strong>What does this actually change in the program?</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 border-b border-slate-200 pb-8" id="test">
+          <div class="wrap">
+            <div class="kicker font-bold text-indigo-800">02 — Put SignalPath to the test</div>
+            <h2 class="font-bold">One program. Four questions. Different kinds of reasoning.</h2>
+            <p class="sectionintro">
+              Campaign Personalization is targeting a November 30 production launch. Choose a question to see the kind of conclusion SignalPath is
+              designed to reach from the evidence above.
+            </p>
+            <div class="scenario">
+              <div class="scenariohead">
+                <div>
+                  <strong>Campaign Personalization</strong>
+                  <div style="font-size: 13px; color: #64748b">Production Launch · Nov 30 · synthetic data</div>
+                </div>
+                <span class="status">AT RISK</span>
+              </div>
+              <div class="qbar" role="group" aria-label="Questions to ask SignalPath">
+                <button class="q active" data-answer="launch" aria-pressed="true">What could prevent launch?</button>
+                <button class="q" data-answer="uat" aria-pressed="false">Is UAT affected?</button>
+                <button class="q" data-answer="blast" aria-pressed="false">What's the blast radius?</button>
+                <button class="q" data-answer="eu" aria-pressed="false">Is EU Consent required?</button>
+              </div>
+              <div class="answer" id="answer" aria-live="polite"></div>
+              <div class="callout" style="margin-top: 22px">
+                Design principle: AI should not manufacture certainty just because we asked. <strong>“Unknown” is a valid program state</strong>, so
+                if EU scope is unknown, the answer is conditional, never a fabricated deadline.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 border-b border-slate-200 pb-8" id="recalc">
+          <div class="wrap">
+            <div class="kicker font-bold text-indigo-800">03 — Evidence changes. SignalPath recalculates.</div>
+            <h2 class="font-bold">AI proposes. The TPM governs the change.</h2>
+            <p class="sectionintro">
+              The TPM learns:
+              <em class="font-bold">“EU traffic is confirmed in the Nov 30 launch; EU Consent is required and forecast for Nov 15.”</em> SignalPath
+              detects what changed, but never silently rewrites program truth.
+            </p>
+            <div class="changegrid">
+              <div class="changebox">
+                <div class="src mb-4 font-bold border-b border-slate-800">Current state</div>
+                <div class="rows">
+                  <div class="row"><span>EU Scope</span><b>Unknown</b></div>
+                  <div class="row"><span>EU Consent</span><b>Conditional</b></div>
+                  <div class="row"><span>Forecast</span><b>Unknown</b></div>
+                </div>
+              </div>
+              <div class="arrow" style="font-size: 28px">→</div>
+              <div class="changebox" style="border-color: #c7d2fe; background: #fafaff">
+                <div class="src mb-4 font-bold border-b border-slate-800 text-indigo-600">Proposed state</div>
+                <div class="rows">
+                  <div class="row"><span>EU Scope</span><b>Confirmed</b></div>
+                  <div class="row"><span>EU Consent</span><b>Required</b></div>
+                  <div class="row"><span>Forecast</span><b>Nov 15</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="apply">
+              <button class="btn" id="applyBtn">Review &amp; Apply Scenario</button
+              ><button class="btn secondary hidden" id="descopeBtn">Now descope EU traffic</button
+              ><span id="applyMsg" style="font-size: 13px; color: #64748b" aria-live="polite">No program state changes until a human approves.</span>
+            </div>
+            <div class="timeline bg-white rounded-2xl shadow-sm border border-slate-200">
+              <div class="track">
+                <div class="mile ok">
+                  <div class="dot"></div>
+                  <h4>UAT</h4>
+                  <small>On Track</small>
+                </div>
+                <div class="mile risk">
+                  <div class="dot"></div>
+                  <h4>Security + QA</h4>
+                  <small>At Risk</small>
+                  <div class="why">Profile API</div>
+                </div>
+                <div class="mile risk">
+                  <div class="dot"></div>
+                  <h4>Production Readiness</h4>
+                  <small>At Risk</small>
+                  <div class="why" id="readinessWhy">Profile API</div>
+                </div>
+                <div class="mile risk">
+                  <div class="dot"></div>
+                  <h4>Launch · Nov 30</h4>
+                  <small>At Risk</small>
+                </div>
+              </div>
+            </div>
+            <div class="callout">
+              Blast radius flows through Security + QA and Production Readiness, not UAT. And EU Consent isn't “late” without an EU-specific
+              required-by date: <strong>one dependency's constraint must not silently become another's.</strong>
+            </div>
+            <h3 style="margin: 40px 0 14px; font-size: 22px; letter-spacing: -0.02em" class="font-bold">
+              History matters. Current truth matters more.
+            </h3>
+            <div class="eventfeed">
+              <div class="event bg-white rounded-2xl shadow-sm border border-slate-200">
+                <div class="tag active bg-white">● ACTIVE</div>
+                <div>
+                  <strong>Profile API forecast moved</strong><br /><span style="color: #64748b; font-size: 13px"
+                    >Oct 26 commitment → ~Nov 15 latest signal</span
+                  >
+                </div>
+                <time>Current</time>
+              </div>
+              <div class="event bg-white rounded-2xl shadow-sm border border-slate-200">
+                <div class="tag resolved bg-white">✓ RESOLVED</div>
+                <div>
+                  <strong>EU Consent removed from Nov 30 launch</strong><br /><span style="color: #64748b; font-size: 13px"
+                    >No longer contributes to current launch risk</span
+                  >
+                </div>
+                <time>Later update</time>
+              </div>
+              <div class="event bg-white rounded-2xl shadow-sm border border-slate-200">
+                <div class="tag superseded bg-white">↺ SUPERSEDED</div>
+                <div>
+                  <strong>EU Consent became launch-required</strong><br /><span style="color: #64748b; font-size: 13px"
+                    >Preserved as historical evidence</span
+                  >
+                </div>
+                <time>Earlier update</time>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 border-b border-slate-200 pb-8" id="think">
+          <div class="wrap">
+            <div class="kicker font-bold text-indigo-800">04 — How I think about it</div>
+            <h2 class="font-bold">Sources → Evidence → Intelligence → Experience</h2>
+            <div class="architecture">
+              <div class="arch"><b>Sources</b><span>Jira · Slack · notes · roadmaps</span></div>
+              <div class="arrow">→</div>
+              <div class="arch"><b>Evidence</b><span>What · who · when · source</span></div>
+              <div class="arrow">→</div>
+              <div class="arch primary"><b>Program Intelligence</b><span>Dependencies · readiness · blast radius</span></div>
+              <div class="arrow">→</div>
+              <div class="arch"><b>TPM Experience</b><span>Ask · timeline · decisions</span></div>
+            </div>
+            <div class="grid4" style="grid-template-columns: 1fr 1fr; margin-top: 22px">
+              <div class="card">
+                <div class="src">Deterministic</div>
+                <h3 class="font-bold">Calculate what can be calculated</h3>
+                <p>
+                  Date variance, dependency traversal and readiness rollups shouldn't need an LLM to guess. Roughly 400 automated checks back them.
+                </p>
+              </div>
+              <div class="card">
+                <div class="src">AI reasoning</div>
+                <h3 class="font-bold">Interpret what humans actually say</h3>
+                <p>“We're probably not going to make Oct 26; it may be mid-November” is where semantic interpretation adds value.</p>
+              </div>
+            </div>
+            <h3 style="margin: 40px 0 14px; font-size: 22px; letter-spacing: -0.02em" class="font-bold">Three hard problems</h3>
+            <div class="challengegrid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))">
+              <div class="card">
+                <h3 class="font-bold">Contradictory evidence</h3>
+                <p>A formal commitment and a newer forecast can both be true.</p>
+              </div>
+              <div class="card">
+                <h3 class="font-bold">Permissions &amp; trust</h3>
+                <p>Agents should retrieve only evidence the user is authorized to see.</p>
+              </div>
+              <div class="card">
+                <h3 class="font-bold">Adoption</h3>
+                <p>It must save TPM attention, not add another place to maintain.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-8 border-b border-slate-200 pb-8" id="learned">
+          <div class="wrap">
+            <div class="kicker font-bold text-indigo-800">05 — What I learned</div>
+            <h2 class="font-bold">The biggest opportunity for AI in program management isn't another status report.</h2>
+            <p class="lead">
+              It's helping TPMs connect fragmented signals, see what materially changed, and focus human judgment where it matters most. AI doesn't
+              replace the TPM; it moves their time from collecting status to making better decisions.
+            </p>
+            <div class="agent" style="margin-top: 30px">
+              <div class="src" style="color: #4f46e5; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 900">
+                One possible enterprise direction
+              </div>
+              <div class="agentflow">
+                <div class="node">TPM</div>
+                <div class="arrow">→</div>
+                <div class="node" style="border-color: #a5b4fc; color: #4338ca">Agentforce</div>
+                <div class="arrow">→</div>
+                <div class="node">SignalPath reasoning pattern</div>
+                <div class="arrow">→</div>
+                <div class="node">Approved actions</div>
+                <div class="arrow">→</div>
+                <div class="node">Program evidence</div>
+              </div>
+              <p>
+                Agentforce could provide the agent and orchestration layer; SignalPath is the TPM-specific intelligence pattern. Before any of it is
+                real: read-only connectors, a shared audit-trailed backend, identity and permissions, and cost and security controls.
+              </p>
+              <p class="note">An implementation direction, not a claim that the prototype is deployed in or connected to Salesforce systems.</p>
+            </div>
+            <p style="margin-top: 28px; color: #475569">
+              If you run programs, I'd like your pushback: what would make you trust a tool like this, and what would make you throw it out? Find me
+              on LinkedIn.
+            </p>
+          </div>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="bg-slate-900 rounded-2xl p-8 text-center text-white mb-12">
+          <div class="wrap">
+            <strong>SignalPath — AI Program Intelligence</strong>
+            <p class="pt-4 pb-4">An independent exploration of AI-native program management using synthetic demonstration data.</p>
+            <p class="note">
+              Concept and prototype by Ayush Jain · Source code is private; no code is published here. This page describes an experimental product
+              concept, not a production service or an endorsement by any referenced platform.
+            </p>
+          </div>
+        </div>
+
+        <!-- share -->
+        <div class="mt-16 mb-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-center sm:text-left">
+            <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
+            <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              onclick="shareToLinkedIn()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on LinkedIn"
+            >
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="shareToTwitter()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on Twitter"
+            >
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="shareToEmail()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share via Email"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="copyToClipboard()"
+              id="copyBtn"
+              class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm"
+            >
+              <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
+              <span id="copyText">Copy Link</span>
+            </button>
+          </div>
+        </div>
+        <!-- share ends-->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+        <p>© 2025 Ayush Jain. All rights reserved.</p>
+        <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+          <span class="icon-linkedin-logo"></span>
+          <span>Connect on LinkedIn</span>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Initialize Share, Icons & Mobile Menu Script -->
+    <script src="js/share.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script async src="js/dep.js"></script>
+  </body>
+</html>

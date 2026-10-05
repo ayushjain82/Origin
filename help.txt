@@ -1,0 +1,29 @@
+1. The Grays (Neutrals)
+* slate (Coolest, slightly blueish - You are using this in your Origin Insights theme!)
+* gray (Cool)
+* zinc (Neutral/Default)
+* neutral (True neutral)
+* stone (Warmest, slightly brownish)
+
+2. The Warm Colors
+* orange
+* amber (Slightly more golden/brown than yellow)
+* rose (A deeper, slightly redder pink)
+* pink
+* fuchsia (Bright purplish-pink)
+
+3. The Cool Colors
+* purple
+* violet (Slightly bluer than purple)
+* sky (Lighter, brighter blue)
+* cyan (Blue-green)
+* teal (Darker blue-green)
+* emerald (A cooler, slightly bluer green)
+* lime (A bright, yellow-green)
+
+4. The Base Colors
+These do not use the numbered shade scale:
+* black
+* white
+* transparent (Great for borders or invisible backgrounds)
+* current (Inherits the current text color—useful for SVG icons)
