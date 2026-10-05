@@ -1,336 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M09DCB9XPN"></script>
     <script async src="js/ga.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Pipeline is a Product</title>
 
-    <meta name="title" content="The Pipeline Strategy: Engineering Flow & Alignment | Origin Strategy">
-    <meta name="description" content="Moving beyond CI/CD. A strategic framework for designing delivery pipelines that balance engineering velocity with executive governance and quality.">
-    <meta name="keywords" content="Pipeline Strategy, CI/CD Governance, Software Delivery, DevOps Leadership, Technical Program Management, Engineering Velocity, Ayush Jain">
-    <meta name="author" content="Ayush Jain">
+    <meta name="title" content="The Pipeline Strategy: Engineering Flow & Alignment | Origin Strategy" />
+    <meta
+      name="description"
+      content="Moving beyond CI/CD. A strategic framework for designing delivery pipelines that balance engineering velocity with executive governance and quality."
+    />
+    <meta
+      name="keywords"
+      content="Pipeline Strategy, CI/CD Governance, Software Delivery, DevOps Leadership, Technical Program Management, Engineering Velocity, Ayush Jain"
+    />
+    <meta name="author" content="Ayush Jain" />
 
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://ayushjain82.github.io/Origin/pipeline-strategy.html">
-    <meta property="og:title" content="The Pipeline Strategy: Engineering Flow & Strategic Alignment">
-    <meta property="og:description" content="How to architect a delivery pipeline that acts as a strategic asset, not a technical bottleneck.">
-    <meta property="og:image" content="https://ayushjain82.github.io/Origin/assets/images/pipeline-strategy-card.png">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://ayushjain82.github.io/Origin/pipeline-strategy.html" />
+    <meta property="og:title" content="The Pipeline Strategy: Engineering Flow & Strategic Alignment" />
+    <meta property="og:description" content="How to architect a delivery pipeline that acts as a strategic asset, not a technical bottleneck." />
+    <meta property="og:image" content="https://ayushjain82.github.io/Origin/assets/images/pipeline-strategy-card.png" />
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ayushjain82.github.io/Origin/pipeline-strategy.html">
-    <meta property="twitter:title" content="The Pipeline Strategy: Engineering Flow & Strategic Alignment">
-    <meta property="twitter:description" content="A framework for PMO leaders to drive continuous alignment through automated delivery pipelines.">
-    <meta property="twitter:image" content="https://ayushjain82.github.io/Origin/assets/images/pipeline-strategy-card.png">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ayushjain82.github.io/Origin/pipeline-strategy.html" />
+    <meta property="twitter:title" content="The Pipeline Strategy: Engineering Flow & Strategic Alignment" />
+    <meta property="twitter:description" content="A framework for PMO leaders to drive continuous alignment through automated delivery pipelines." />
+    <meta property="twitter:image" content="https://ayushjain82.github.io/Origin/assets/images/pipeline-strategy-card.png" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="js/tailwind-config.js"></script>
-</head>
+  </head>
 
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
-
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- Logo / Brand -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div
-                    class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
-                    <i data-lucide="layers" class="w-5 h-5"></i>
-                </div>
-                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
-            </a>
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- Logo / Brand -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+        </a>
 
-             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900 ">
-                <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors  ">The Lab</a>
-            </div>
-
-
-            <!-- Mobile Menu Button -->
-            <button aria-label="mobile menu" id="mobile-menu-btn"
-                class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900">
+          <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors">The Lab</a>
         </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu"
-            class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
-            <div class="flex flex-col p-6 space-y-6">
-                <a href="thelab.html"
-                    class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The
-                    Lab</a>
-            </div>
+
+        <!-- Mobile Menu Button -->
+        <button aria-label="mobile menu" id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+        <div class="flex flex-col p-6 space-y-6">
+          <a href="thelab.html" class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The Lab</a>
         </div>
+      </div>
     </nav>
-
 
     <!-- Article Wrapper -->
     <main class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-
-            <!-- Header -->
-            <header class="mb-12">
-                <div
-                    class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-200 pb-8">
-                    <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <span
-                                class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-xs font-bold uppercase tracking-wider">Platform
-                                Strategy</span>
-                        </div>
-                        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                            Your Pipeline is a Product.<br>
-                            <span class="text-indigo-600">Treat it like one.</span>
-                        </h1>
-                    </div>
-                </div>
-
-                <p class="text-xl text-slate-500 leading-relaxed max-w-3xl">
-                    <strong class="text-slate-900">Your First User is Your Developer.</strong> When "Developer
-                    Experience" (DevEx) fails, velocity dies. If you wouldn't accept 40-minute load times for your
-                    customers, why do you accept them for your engineers?
-                </p>
-            </header>
-
-            <!-- Hero Section -->
-            <section
-                class="mb-16 bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 overflow-hidden relative shadow-2xl group">
-                <div class="absolute inset-0 opacity-20"
-                    style="background-image: linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px); background-size: 40px 40px;">
-                </div>
-
-                <div class="relative z-10 flex flex-col gap-8">
-                    <div
-                        class="flex justify-between items-end text-slate-400 text-xs font-mono uppercase tracking-widest border-b border-slate-700 pb-2">
-                        <span>Input: Code Commit</span>
-                        <span>Output: Customer Value</span>
-                    </div>
-
-                    <div class="relative h-32 md:h-40 flex items-center">
-                        <div class="absolute inset-x-0 h-4 bg-slate-800 border-y border-slate-700"></div>
-                        <div class="absolute inset-0 flex items-center justify-around">
-                            <div
-                                class="w-24 h-16 bg-slate-800 border border-indigo-500/50 rounded-lg shadow-[0_0_20px_rgba(99,102,241,0.2)] flex flex-col items-center justify-center gap-2 z-10">
-                                <span class="text-[10px] text-indigo-300 font-mono">Build</span>
-                                <div class="flex gap-1">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></div>
-                                    <div class="w-1.5 h-1.5 rounded-full bg-indigo-500/50"></div>
-                                </div>
-                            </div>
-                            <div
-                                class="w-24 h-16 bg-slate-800 border border-emerald-500/50 rounded-lg shadow-[0_0_20px_rgba(16,185,129,0.2)] flex flex-col items-center justify-center gap-2 z-10">
-                                <span class="text-[10px] text-emerald-300 font-mono">Test</span>
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>
-                            </div>
-                            <div
-                                class="w-24 h-16 bg-slate-800 border border-purple-500/50 rounded-lg shadow-[0_0_20px_rgba(168,85,247,0.2)] flex flex-col items-center justify-center gap-2 z-10">
-                                <span class="text-[10px] text-purple-300 font-mono">Deploy</span>
-                                <i data-lucide="rocket" class="w-4 h-4 text-purple-500"></i>
-                            </div>
-                        </div>
-                        <div
-                            class="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-30 animate-pulse">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-4 border-t border-slate-800 pt-6">
-                        <div class="text-center">
-                            <div class="text-[10px] text-slate-500 uppercase font-bold">Lead Time</div>
-                            <div class="text-xl font-mono text-white">12m</div>
-                        </div>
-                        <div class="text-center border-l border-slate-800">
-                            <div class="text-[10px] text-slate-500 uppercase font-bold">Change Failure</div>
-                            <div class="text-xl font-mono text-emerald-400">&lt; 1%</div>
-                        </div>
-                        <div class="text-center border-l border-slate-800">
-                            <div class="text-[10px] text-slate-500 uppercase font-bold">Deploy Frequency</div>
-                            <div class="text-xl font-mono text-purple-400">On-Demand</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="mb-16">
-                <div class="prose prose-slate max-w-none text-slate-600 leading-7 text-lg">
-                    <p>
-                        We treat our customer-facing app like a jewel. We track its uptime, we optimize its load speed,
-                        and we obsess over its UX.
-                    </p>
-                    <p>
-                        But we treat our internal pipeline like a utility closet. It's messy, it breaks constantly, and
-                        "restarting the build" is considered a valid fix.
-                    </p>
-                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg my-8">
-                        <p class="text-indigo-900 font-medium m-0">
-                            <strong>The "Deployment Tax":</strong> Every minute an engineer spends babysitting a build
-                            is a minute stolen from product innovation.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- the Product Mindset Shift -->
-            <section class="mb-24">
-                <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
-                    <i data-lucide="refresh-cw" class="w-6 h-6 text-indigo-600"></i> The Product Mindset Shift
-                </h2>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-
-                    <div
-                        class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300">
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="bg-indigo-50 p-3 rounded-lg flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
-                                <i data-lucide="shield-check" class="w-6 h-6 text-indigo-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">Standardize the Approval</h3>
-                                <p class="text-slate-600 mb-4">
-                                    We don't remove humans; we move them to the right place. Approvals should be <strong>async</strong> and happen at the Pull Request, not as a synchronous "Deploy Button" ceremony.
-                                </p>
-                                <p class="text-sm text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-200">
-                                    <strong>The Rule:</strong> No code reaches Production without a standardized Peer Review and automated Policy Check (Lint/Security).
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300">
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="bg-indigo-50 p-3 rounded-lg flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
-                                <i data-lucide="timer" class="w-6 h-6 text-indigo-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">Measure "Lead Time"</h3>
-                                <p class="text-slate-600 mb-4">
-                                    "Velocity" (Story Points) is a vanity metric. "Lead Time" (Commit to Production)
-                                    captures the reality of your approval bottlenecks.
-                                </p>
-                                <div class="flex flex-wrap gap-2 text-xs font-mono uppercase tracking-wider mt-2">
-                                    <span class="px-2 py-1 bg-red-100 text-red-700 rounded">2 Days = Bad</span>
-                                    <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded">4 Hrs = Avg</span>
-                                    <span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded">15 Mins =
-                                        Elite</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300">
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="bg-indigo-50 p-3 rounded-lg flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
-                                <i data-lucide="lock" class="w-6 h-6 text-indigo-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">Guardrails Over Gatekeepers</h3>
-                                <p class="text-slate-600 mb-4">
-                                    A new hire shouldn't have the <em>access</em> to break Production, but they should
-                                    have the <em>process</em> to contribute safely.
-                                </p>
-                                <p class="text-sm text-slate-500">
-                                    <strong>The Standard:</strong> The pipeline enforces RBAC. Junior devs can trigger Staging deploys; only Senior/Lead approvals trigger the <strong>automated</strong> Prod promotion.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300">
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="bg-indigo-50 p-3 rounded-lg flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
-                                <i data-lucide="activity" class="w-6 h-6 text-indigo-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">Optimize Recovery (MTTR)</h3>
-                                <p class="text-slate-600 mb-4">
-                                    When things break (and they will), how fast can we revert? The approval process for
-                                    a Rollback must be automated and instant.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="px-3 py-1 bg-slate-100 rounded-full text-xs font-mono text-slate-600">Feature
-                                        Flags</span>
-                                    <span
-                                        class="px-3 py-1 bg-slate-100 rounded-full text-xs font-mono text-slate-600">Auto-Rollbacks</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- Checklist Section -->
-            <div class="bg-slate-900 rounded-2xl p-8 text-center text-white mb-12">
-                <h3 class="text-2xl font-bold mb-4">Audit Your Pipeline</h3>
-                <p class="text-slate-400 mb-8 max-w-lg mx-auto">
-                    Don't guess where the bottlenecks are. Use the checklist to score your delivery maturity.
-                </p>
-                <div class="flex justify-center gap-4">
-                    <a href="checklist.html"
-                        class="bg-white text-slate-900 hover:bg-indigo-50 px-6 py-3 rounded-lg font-bold transition-colors inline-flex items-center gap-2">
-                        <i data-lucide="clipboard-check" class="w-4 h-4"></i> Open the Checklist
-                    </a>
-                </div>
+      <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="mb-12">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-200 pb-8">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-xs font-bold uppercase tracking-wider"
+                  >Platform Strategy</span
+                >
+              </div>
+              <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                Your Pipeline is a Product.<br />
+                <span class="text-indigo-600">Treat it like one.</span>
+              </h1>
             </div>
+          </div>
+
+          <p class="text-xl text-slate-500 leading-relaxed max-w-3xl">
+            <strong class="text-slate-900">Your First User is Your Developer.</strong> When "Developer Experience" (DevEx) fails, velocity dies. If
+            you wouldn't accept 40-minute load times for your customers, why do you accept them for your engineers?
+          </p>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="mb-16 bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 overflow-hidden relative shadow-2xl group">
+          <div
+            class="absolute inset-0 opacity-20"
+            style="
+              background-image: linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px);
+              background-size: 40px 40px;
+            "
+          ></div>
+
+          <div class="relative z-10 flex flex-col gap-8">
+            <div class="flex justify-between items-end text-slate-400 text-xs font-mono uppercase tracking-widest border-b border-slate-700 pb-2">
+              <span>Input: Code Commit</span>
+              <span>Output: Customer Value</span>
+            </div>
+
+            <div class="relative h-32 md:h-40 flex items-center">
+              <div class="absolute inset-x-0 h-4 bg-slate-800 border-y border-slate-700"></div>
+              <div class="absolute inset-0 flex items-center justify-around">
+                <div
+                  class="w-24 h-16 bg-slate-800 border border-indigo-500/50 rounded-lg shadow-[0_0_20px_rgba(99,102,241,0.2)] flex flex-col items-center justify-center gap-2 z-10"
+                >
+                  <span class="text-[10px] text-indigo-300 font-mono">Build</span>
+                  <div class="flex gap-1">
+                    <div class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-indigo-500/50"></div>
+                  </div>
+                </div>
+                <div
+                  class="w-24 h-16 bg-slate-800 border border-emerald-500/50 rounded-lg shadow-[0_0_20px_rgba(16,185,129,0.2)] flex flex-col items-center justify-center gap-2 z-10"
+                >
+                  <span class="text-[10px] text-emerald-300 font-mono">Test</span>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>
+                </div>
+                <div
+                  class="w-24 h-16 bg-slate-800 border border-purple-500/50 rounded-lg shadow-[0_0_20px_rgba(168,85,247,0.2)] flex flex-col items-center justify-center gap-2 z-10"
+                >
+                  <span class="text-[10px] text-purple-300 font-mono">Deploy</span>
+                  <i data-lucide="rocket" class="w-4 h-4 text-purple-500"></i>
+                </div>
+              </div>
+              <div
+                class="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-30 animate-pulse"
+              ></div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 border-t border-slate-800 pt-6">
+              <div class="text-center">
+                <div class="text-[10px] text-slate-500 uppercase font-bold">Lead Time</div>
+                <div class="text-xl font-mono text-white">12m</div>
+              </div>
+              <div class="text-center border-l border-slate-800">
+                <div class="text-[10px] text-slate-500 uppercase font-bold">Change Failure</div>
+                <div class="text-xl font-mono text-emerald-400">&lt; 1%</div>
+              </div>
+              <div class="text-center border-l border-slate-800">
+                <div class="text-[10px] text-slate-500 uppercase font-bold">Deploy Frequency</div>
+                <div class="text-xl font-mono text-purple-400">On-Demand</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mb-16">
+          <div class="prose prose-slate max-w-none text-slate-600 leading-7 text-lg">
+            <p>We treat our customer-facing app like a jewel. We track its uptime, we optimize its load speed, and we obsess over its UX.</p>
+            <p>
+              But we treat our internal pipeline like a utility closet. It's messy, it breaks constantly, and "restarting the build" is considered a
+              valid fix.
+            </p>
+            <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg my-8">
+              <p class="text-indigo-900 font-medium m-0">
+                <strong>The "Deployment Tax":</strong> Every minute an engineer spends babysitting a build is a minute stolen from product innovation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- the Product Mindset Shift -->
+        <section class="mb-24">
+          <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+            <i data-lucide="refresh-cw" class="w-6 h-6 text-indigo-600"></i> The Product Mindset Shift
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div
+              class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-indigo-50 p-3 rounded-lg flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
+                  <i data-lucide="shield-check" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Standardize the Approval</h3>
+                  <p class="text-slate-600 mb-4">
+                    We don't remove humans; we move them to the right place. Approvals should be <strong>async</strong> and happen at the Pull
+                    Request, not as a synchronous "Deploy Button" ceremony.
+                  </p>
+                  <p class="text-sm text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <strong>The Rule:</strong> No code reaches Production without a standardized Peer Review and automated Policy Check
+                    (Lint/Security).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-indigo-50 p-3 rounded-lg flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
+                  <i data-lucide="timer" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Measure "Lead Time"</h3>
+                  <p class="text-slate-600 mb-4">
+                    "Velocity" (Story Points) is a vanity metric. "Lead Time" (Commit to Production) captures the reality of your approval
+                    bottlenecks.
+                  </p>
+                  <div class="flex flex-wrap gap-2 text-xs font-mono uppercase tracking-wider mt-2">
+                    <span class="px-2 py-1 bg-red-100 text-red-700 rounded">2 Days = Bad</span>
+                    <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded">4 Hrs = Avg</span>
+                    <span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded">15 Mins = Elite</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-indigo-50 p-3 rounded-lg flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
+                  <i data-lucide="lock" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Guardrails Over Gatekeepers</h3>
+                  <p class="text-slate-600 mb-4">
+                    A new hire shouldn't have the <em>access</em> to break Production, but they should have the <em>process</em> to contribute safely.
+                  </p>
+                  <p class="text-sm text-slate-500">
+                    <strong>The Standard:</strong> The pipeline enforces RBAC. Junior devs can trigger Staging deploys; only Senior/Lead approvals
+                    trigger the <strong>automated</strong> Prod promotion.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all duration-300"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-indigo-50 p-3 rounded-lg flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
+                  <i data-lucide="activity" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Optimize Recovery (MTTR)</h3>
+                  <p class="text-slate-600 mb-4">
+                    When things break (and they will), how fast can we revert? The approval process for a Rollback must be automated and instant.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-mono text-slate-600">Feature Flags</span>
+                    <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-mono text-slate-600">Auto-Rollbacks</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Checklist Section -->
+        <div class="bg-slate-900 rounded-2xl p-8 text-center text-white mb-12">
+          <h3 class="text-2xl font-bold mb-4">Audit Your Pipeline</h3>
+          <p class="text-slate-400 mb-8 max-w-lg mx-auto">
+            Don't guess where the bottlenecks are. Use the checklist to score your delivery maturity.
+          </p>
+          <div class="flex justify-center gap-4">
+            <a
+              href="checklist.html"
+              class="bg-white text-slate-900 hover:bg-indigo-50 px-6 py-3 rounded-lg font-bold transition-colors inline-flex items-center gap-2"
+            >
+              <i data-lucide="clipboard-check" class="w-4 h-4"></i> Open the Checklist
+            </a>
+          </div>
+        </div>
 
         <!-- share -->
-            <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div class="text-center sm:text-left">
-                    <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
-                    <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
-                </div>
-                
-                <div class="flex items-center gap-3">
-                    <button onclick="shareToLinkedIn()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on LinkedIn">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </button>
-                    
-                    <button onclick="shareToTwitter()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on Twitter">
-                        <i data-lucide="twitter" class="w-5 h-5"></i>
-                    </button>
+        <div class="mt-16 mb-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-center sm:text-left">
+            <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
+            <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
+          </div>
 
-                    <button onclick="shareToEmail()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share via Email">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                    </button>
+          <div class="flex items-center gap-3">
+            <button
+              onclick="shareToLinkedIn()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on LinkedIn"
+            >
+              <!-- LinkedIn SVG -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </button>
 
-                    <button onclick="copyToClipboard()" id="copyBtn" class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm">
-                        <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
-                        <span id="copyText">Copy Link</span>
-                    </button>
-                </div>
-            </div>
-            <!-- share ends-->
+            <button
+              onclick="shareToTwitter()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on Twitter"
+            >
+              <!-- X / Twitter SVG -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </button>
 
+            <button
+              onclick="shareToEmail()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share via Email"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="copyToClipboard()"
+              id="copyBtn"
+              class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm"
+            >
+              <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
+              <span id="copyText">Copy Link</span>
+            </button>
+          </div>
         </div>
+        <!-- share ends-->
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
-            <p>© 2025 Ayush Jain. All rights reserved.</p>
-            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
-                <span class="icon-linkedin-logo"></span>
-                <span>Connect on LinkedIn</span>
-            </a>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+        <p>© 2025 Ayush Jain. All rights reserved.</p>
+        <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+          <span class="icon-linkedin-logo"></span>
+          <span>Connect on LinkedIn</span>
+        </a>
+      </div>
     </footer>
 
-    <!-- Initialize Share, Icons & Mobile Menu Script -->     
+    <!-- Initialize Share, Icons & Mobile Menu Script -->
     <script src="js/share.js" defer></script>
     <script src="js/nav.js" defer></script>
-</body>
-
+  </body>
 </html>

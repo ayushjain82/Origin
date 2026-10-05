@@ -1,306 +1,355 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M09DCB9XPN"></script>
     <script async src="js/ga.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vibe Coding | The PM's Superpower</title>
-     
-   <!-- Tailwind CSS -->
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="js/tailwind-config.js"></script>
-
-</head>
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
-
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- Logo / Brand -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
-                    <i data-lucide="layers" class="w-5 h-5"></i>
-                </div>
-                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
-            </a>
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- Logo / Brand -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+        </a>
 
-             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900 ">
-                <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors  ">The Lab</a>
-            </div>
-
-
-            <!-- Mobile Menu Button -->
-            <button aria-label="mobile menu" id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900">
+          <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors">The Lab</a>
         </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
-            <div class="flex flex-col p-6 space-y-6">
-                <a href="thelab.html" class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The Lab</a>
-            </div>
+
+        <!-- Mobile Menu Button -->
+        <button aria-label="mobile menu" id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+        <div class="flex flex-col p-6 space-y-6">
+          <a href="thelab.html" class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The Lab</a>
         </div>
+      </div>
     </nav>
 
-
     <main class="pt-32 pb-10 px-6">
-        <div class="max-w-5xl mx-auto">
+      <div class="max-w-5xl mx-auto">
+        <header class="mb-12">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">Technical Strategy</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
+            Vibe Coding<br />
+            <span class="text-indigo-600">The PM’s New Superpower.</span>
+          </h1>
+          <p class="text-xl text-slate-500 leading-relaxed">
+            <span class="font-bold">Stop Requesting Tools. Start Building Them.</span>
+            <br />
+            Why the modern Product Manager’s highest-leverage skill is <strong>Vibe Coding</strong>: Using AI to bridge the gap between "I have an
+            idea" and "It works."
+          </p>
+        </header>
 
-            <header class="mb-12">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider">Technical Strategy</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
-                    Vibe Coding<br>
-                    <span class="text-indigo-600">The PM’s New Superpower.</span>
-                </h1>
-                <p class="text-xl text-slate-500 leading-relaxed">
-                   <span class="font-bold">Stop Requesting Tools. Start Building Them.</span>
-                   <br/> Why the modern Product Manager’s highest-leverage skill is <strong>Vibe Coding</strong>: Using AI to bridge the gap between "I have an idea" and "It works."
-                </p>
-            </header>
+        <!-- intro graphic  -->
+        <div
+          class="w-full h-64 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-center mb-12 overflow-hidden shadow-xl relative group"
+        >
+          <div
+            class="absolute inset-0 opacity-20"
+            style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 24px 24px"
+          ></div>
 
-            <!-- intro graphic  -->
-            <div class="w-full h-64 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-center mb-12 overflow-hidden shadow-xl relative group">
-                <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 24px 24px;"></div>
-                
-                <div class="relative w-full max-w-2xl px-4 flex items-center justify-between z-10 ">
-                    <div class="flex flex-col items-center gap-4">
-                        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-lg text-slate-400">
-                            <i data-lucide="lightbulb" class="w-8 h-8"></i>
-                        </div>
-                        <span class="text-slate-400 font-mono text-xs tracking-widest uppercase">The Need</span>
-                    </div>
-
-                    <div class="flex-1 mx-6 relative h-2">
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-700 via-indigo-500 to-emerald-500 rounded-full h-1 mt-0.5"></div>
-                        <div class="absolute -top-12 left-1/4 bg-slate-800/90 p-2 rounded border border-slate-700 text-[10px] font-mono text-indigo-300 shadow-lg transform -rotate-6">
-                            import pandas as pd
-                        </div>
-                        <div class="absolute top-8 right-1/4 bg-slate-800/90 p-2 rounded border border-slate-700 text-[10px] font-mono text-emerald-300 shadow-lg transform rotate-3">
-                            fetch(api_url)
-                        </div>
-                        <div class="absolute -bottom-8 w-full text-center">
-                            <span class="text-indigo-400 font-bold text-xs uppercase tracking-widest bg-slate-900/50 px-2 py-1 rounded">Vibe Coding</span>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center gap-4">
-                        <div class="bg-emerald-900/30 p-4 rounded-xl border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)] text-emerald-400">
-                            <i data-lucide="play-circle" class="w-8 h-8"></i>
-                        </div>
-                        <span class="text-emerald-500 font-mono text-xs tracking-widest uppercase">The Solution</span>
-                    </div>
-                </div>
+          <div class="relative w-full max-w-2xl px-4 flex items-center justify-between z-10">
+            <div class="flex flex-col items-center gap-4">
+              <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-lg text-slate-400">
+                <i data-lucide="lightbulb" class="w-8 h-8"></i>
+              </div>
+              <span class="text-slate-400 font-mono text-xs tracking-widest uppercase">The Need</span>
             </div>
 
-            <!-- strategic shift  -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <i data-lucide="alert-triangle" class="w-6 h-6 text-indigo-600"></i> The Strategic Shift
-                </h2>
-                <div class="prose prose-slate max-w-none text-slate-600 leading-7">
-                    <p class="mb-4">
-                        There is an eternal struggle in product management: The gap between the speed of thought and the speed of execution. You have a hypothesis, but Engineering is swamped with mission-critical infrastructure work.
-                    </p>
-                    <p class="mb-6">
-                        Your "small tooling request" gets backlog-prioritized to Q3 of next year. You are blocked.
-                    </p>
-                    
-                    <div class="p-6 md:p-8 bg-white rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-indigo-500"></div>
-                        <i data-lucide="quote" class="w-8 h-8 text-indigo-100 absolute top-4 right-4"></i>
-                        <p class="text-lg font-medium text-slate-800 italic relative z-10">
-                            "Vibe coding isn't about replacing engineers. It's about respecting their time by handling the low-stakes tooling yourself."
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- workflow  -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <i data-lucide="zap" class="w-6 h-6 text-indigo-600"></i> The Workflow
-                </h2>
-                <div class="prose prose-slate max-w-none text-slate-600 leading-7">
-                    <p class="mb-6">
-                        <strong>Vibe Coding</strong> is the art of using LLMs (Claude, GPT-4o) to translate your product intent—the "vibe"—into functional, throwaway code. It collapses the distance between defining a problem and validating a solution.
-                    </p>
-                    <div class="grid sm:grid-cols-1 gap-4">
-                        <div class="graphic-container">
-                            <div class="bridge-viz">
-                                <div class="cliff bg-slate-700">
-                                    <div class="cliff-label text-slate-600">Idea</div>
-                                </div>
-                                <div class="bridge-span"></div>
-                                <div class="cliff bg-slate-700">
-                                    <div class="cliff-label text-slate-600">Product</div>
-                                </div>
-                            </div>
-                            <div class="graphic-caption text-slate-800">Figure 1: Collapsing the execution gap with AI.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- iteration loop   -->
-            <section class="mb-12 bg-slate-100 rounded-3xl p-6 md:p-8 border border-slate-200/60">
-                <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                    <div class="bg-white p-2 rounded-lg shadow-sm">
-                        <i data-lucide="refresh-cw" class="w-6 h-6 text-indigo-600"></i>
-                    </div>
-                    The Iteration Loop
-                </h2>
-                
-                <div class="space-y-8">
-                    <div class="flex gap-5 items-start">
-                        <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-blue-600 font-bold text-lg">1</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">The Vibe (The Prompt)</h3>
-                            <p class="text-slate-600 mt-2 text-lg leading-relaxed">
-                                Explain what you want in plain English. Be specific about inputs and outputs.
-                                <br><span class="font-mono text-sm bg-slate-200 px-2 py-1 rounded text-slate-600 mt-2 inline-block">"I need a script that takes CSV X and filters for Y..."</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-5 items-start">
-                        <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-purple-600 font-bold text-lg">2</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">The Generation</h3>
-                            <p class="text-slate-600 mt-2 text-lg leading-relaxed">
-                                The AI gives you code (Python, JS, HTML). You copy it. You don't judge it yet.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-5 items-start">
-                        <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-emerald-600 font-bold text-lg">3</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Execute & Fail Fast</h3>
-                            <p class="text-slate-600 mt-2 text-lg leading-relaxed">
-                                Run it locally. It will likely break. <strong>This is the most important step.</strong> Paste the error message back into the AI. It fixes it. Repeat until you have a working tool.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3 ways to use it   -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                    <i data-lucide="layers" class="w-6 h-6 text-indigo-600"></i> 3 Ways to Use It Today
-                </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mb-4 group-hover:bg-indigo-100 transition-colors">
-                            <i data-lucide="database" class="w-5 h-5 text-indigo-600"></i>
-                        </div>
-                        <div class="font-bold text-slate-900 mb-2 use-case-title">The "Messy Data" Validator<span class="tag">Analysis</span></div>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Don't wait for BI. Use Pandas to prove your retention hypothesis.</p>
-                        <div class="bg-slate-900 rounded text-xs font-mono text-indigo-200 code-block">
-                            <span class="code-label">PROMPT</span>
-                            "I have a CSV named 'data.csv'. Write a Python script using Pandas to filter for users who completed step 3, and calculate their retention %. Compare to the average."
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
-                            <i data-lucide="workflow" class="w-5 h-5 text-blue-600"></i>
-                        </div>
-                        <div class="font-bold text-slate-900 mb-2 use-case-title">The Workflow Automator<span class="tag">Automation</span></div>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Stop manually updating Sheets. Script the Jira API glue work.</p>
-                        <div class="bg-slate-900 rounded text-xs font-mono text-blue-200 code-block">
-                            <span class="code-label">PROMPT</span>
-                            "Write a Python script that uses the Jira API to fetch all tickets in 'Project X'. Update row C in this Google Sheet with the status. Tell me how to handle auth."
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-4 group-hover:bg-purple-100 transition-colors">
-                            <i data-lucide="layout" class="w-5 h-5 text-purple-600"></i>
-                        </div>
-                        <div class="font-bold text-slate-900 mb-2 use-case-title">The "Napkin" UI Prototype<span class="tag">Design</span></div>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Words fail. Generate an HTML file to visualize the dashboard widget.</p>
-                        <div class="bg-slate-900 rounded text-xs font-mono text-purple-200 code-block">
-                            <span class="code-label">PROMPT</span>
-                            "Create a simple HTML/CSS webpage. Sidebar on left. Main area has a card showing 'Velocity' with a green up-arrow and a chart placeholder. Modern style."
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center mb-4 group-hover:bg-red-100 transition-colors">
-                            <i data-lucide="shield-alert" class="w-5 h-5 text-red-600"></i>
-                        </div>
-                        <div class="font-bold text-slate-900 mb-2">Strategic Guardrails</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            <strong>1. Never Production:</strong> This is for prototyping only.<br>
-                            <strong>2. Data Privacy:</strong> Never paste sensitive customer data into public LLMs.<br>
-                            <strong>3. Security:</strong> Ask AI how to use environment variables.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Footnote   -->
-            <div class="mb-12 border-t border-slate-200 pt-6">
-                <div class="flex gap-2 text-slate-500">
-                    <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
-                    <p class="text-xs leading-relaxed">
-                        <strong>Note:</strong> Vibe coding is a methodology for empowerment, not a replacement for professional software engineering practices. Always consult your engineering lead before deploying any automation.
-                    </p>
-                </div>
+            <div class="flex-1 mx-6 relative h-2">
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-700 via-indigo-500 to-emerald-500 rounded-full h-1 mt-0.5"></div>
+              <div
+                class="absolute -top-12 left-1/4 bg-slate-800/90 p-2 rounded border border-slate-700 text-[10px] font-mono text-indigo-300 shadow-lg transform -rotate-6"
+              >
+                import pandas as pd
+              </div>
+              <div
+                class="absolute top-8 right-1/4 bg-slate-800/90 p-2 rounded border border-slate-700 text-[10px] font-mono text-emerald-300 shadow-lg transform rotate-3"
+              >
+                fetch(api_url)
+              </div>
+              <div class="absolute -bottom-8 w-full text-center">
+                <span class="text-indigo-400 font-bold text-xs uppercase tracking-widest bg-slate-900/50 px-2 py-1 rounded">Vibe Coding</span>
+              </div>
             </div>
-          <!-- share -->
-            <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div class="text-center sm:text-left">
-                    <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
-                    <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
-                </div>
-                
-                <div class="flex items-center gap-3">
-                    <button onclick="shareToLinkedIn()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on LinkedIn">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </button>
-                    
-                    <button onclick="shareToTwitter()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on Twitter">
-                        <i data-lucide="twitter" class="w-5 h-5"></i>
-                    </button>
 
-                    <button onclick="shareToEmail()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share via Email">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                    </button>
-
-                    <button onclick="copyToClipboard()" id="copyBtn" class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm">
-                        <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
-                        <span id="copyText">Copy Link</span>
-                    </button>
-                </div>
+            <div class="flex flex-col items-center gap-4">
+              <div class="bg-emerald-900/30 p-4 rounded-xl border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)] text-emerald-400">
+                <i data-lucide="play-circle" class="w-8 h-8"></i>
+              </div>
+              <span class="text-emerald-500 font-mono text-xs tracking-widest uppercase">The Solution</span>
             </div>
-            <!-- share ends-->
-
+          </div>
         </div>
+
+        <!-- strategic shift  -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <i data-lucide="alert-triangle" class="w-6 h-6 text-indigo-600"></i> The Strategic Shift
+          </h2>
+          <div class="prose prose-slate max-w-none text-slate-600 leading-7">
+            <p class="mb-4">
+              There is an eternal struggle in product management: The gap between the speed of thought and the speed of execution. You have a
+              hypothesis, but Engineering is swamped with mission-critical infrastructure work.
+            </p>
+            <p class="mb-6">Your "small tooling request" gets backlog-prioritized to Q3 of next year. You are blocked.</p>
+
+            <div class="p-6 md:p-8 bg-white rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-1 h-full bg-indigo-500"></div>
+              <i data-lucide="quote" class="w-8 h-8 text-indigo-100 absolute top-4 right-4"></i>
+              <p class="text-lg font-medium text-slate-800 italic relative z-10">
+                "Vibe coding isn't about replacing engineers. It's about respecting their time by handling the low-stakes tooling yourself."
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- workflow  -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <i data-lucide="zap" class="w-6 h-6 text-indigo-600"></i> The Workflow
+          </h2>
+          <div class="prose prose-slate max-w-none text-slate-600 leading-7">
+            <p class="mb-6">
+              <strong>Vibe Coding</strong> is the art of using LLMs (Claude, GPT-4o) to translate your product intent—the "vibe"—into functional,
+              throwaway code. It collapses the distance between defining a problem and validating a solution.
+            </p>
+            <div class="grid sm:grid-cols-1 gap-4">
+              <div class="graphic-container">
+                <div class="bridge-viz">
+                  <div class="cliff bg-slate-700">
+                    <div class="cliff-label text-slate-600">Idea</div>
+                  </div>
+                  <div class="bridge-span"></div>
+                  <div class="cliff bg-slate-700">
+                    <div class="cliff-label text-slate-600">Product</div>
+                  </div>
+                </div>
+                <div class="graphic-caption text-slate-800">Figure 1: Collapsing the execution gap with AI.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- iteration loop   -->
+        <section class="mb-12 bg-slate-100 rounded-3xl p-6 md:p-8 border border-slate-200/60">
+          <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div class="bg-white p-2 rounded-lg shadow-sm">
+              <i data-lucide="refresh-cw" class="w-6 h-6 text-indigo-600"></i>
+            </div>
+            The Iteration Loop
+          </h2>
+
+          <div class="space-y-8">
+            <div class="flex gap-5 items-start">
+              <div
+                class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-blue-600 font-bold text-lg"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">The Vibe (The Prompt)</h3>
+                <p class="text-slate-600 mt-2 text-lg leading-relaxed">
+                  Explain what you want in plain English. Be specific about inputs and outputs.
+                  <br /><span class="font-mono text-sm bg-slate-200 px-2 py-1 rounded text-slate-600 mt-2 inline-block"
+                    >"I need a script that takes CSV X and filters for Y..."</span
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-5 items-start">
+              <div
+                class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-purple-600 font-bold text-lg"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">The Generation</h3>
+                <p class="text-slate-600 mt-2 text-lg leading-relaxed">
+                  The AI gives you code (Python, JS, HTML). You copy it. You don't judge it yet.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-5 items-start">
+              <div
+                class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex-shrink-0 flex items-center justify-center text-emerald-600 font-bold text-lg"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">Execute & Fail Fast</h3>
+                <p class="text-slate-600 mt-2 text-lg leading-relaxed">
+                  Run it locally. It will likely break. <strong>This is the most important step.</strong> Paste the error message back into the AI. It
+                  fixes it. Repeat until you have a working tool.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 ways to use it   -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <i data-lucide="layers" class="w-6 h-6 text-indigo-600"></i> 3 Ways to Use It Today
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
+              <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mb-4 group-hover:bg-indigo-100 transition-colors">
+                <i data-lucide="database" class="w-5 h-5 text-indigo-600"></i>
+              </div>
+              <div class="font-bold text-slate-900 mb-2 use-case-title">The "Messy Data" Validator<span class="tag">Analysis</span></div>
+              <p class="text-sm text-slate-600 leading-relaxed mb-4">Don't wait for BI. Use Pandas to prove your retention hypothesis.</p>
+              <div class="bg-slate-900 rounded text-xs font-mono text-indigo-200 code-block">
+                <span class="code-label">PROMPT</span>
+                "I have a CSV named 'data.csv'. Write a Python script using Pandas to filter for users who completed step 3, and calculate their
+                retention %. Compare to the average."
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
+              <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
+                <i data-lucide="workflow" class="w-5 h-5 text-blue-600"></i>
+              </div>
+              <div class="font-bold text-slate-900 mb-2 use-case-title">The Workflow Automator<span class="tag">Automation</span></div>
+              <p class="text-sm text-slate-600 leading-relaxed mb-4">Stop manually updating Sheets. Script the Jira API glue work.</p>
+              <div class="bg-slate-900 rounded text-xs font-mono text-blue-200 code-block">
+                <span class="code-label">PROMPT</span>
+                "Write a Python script that uses the Jira API to fetch all tickets in 'Project X'. Update row C in this Google Sheet with the status.
+                Tell me how to handle auth."
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
+              <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-4 group-hover:bg-purple-100 transition-colors">
+                <i data-lucide="layout" class="w-5 h-5 text-purple-600"></i>
+              </div>
+              <div class="font-bold text-slate-900 mb-2 use-case-title">The "Napkin" UI Prototype<span class="tag">Design</span></div>
+              <p class="text-sm text-slate-600 leading-relaxed mb-4">Words fail. Generate an HTML file to visualize the dashboard widget.</p>
+              <div class="bg-slate-900 rounded text-xs font-mono text-purple-200 code-block">
+                <span class="code-label">PROMPT</span>
+                "Create a simple HTML/CSS webpage. Sidebar on left. Main area has a card showing 'Velocity' with a green up-arrow and a chart
+                placeholder. Modern style."
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
+              <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center mb-4 group-hover:bg-red-100 transition-colors">
+                <i data-lucide="shield-alert" class="w-5 h-5 text-red-600"></i>
+              </div>
+              <div class="font-bold text-slate-900 mb-2">Strategic Guardrails</div>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                <strong>1. Never Production:</strong> This is for prototyping only.<br />
+                <strong>2. Data Privacy:</strong> Never paste sensitive customer data into public LLMs.<br />
+                <strong>3. Security:</strong> Ask AI how to use environment variables.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footnote   -->
+        <div class="mb-12 border-t border-slate-200 pt-6">
+          <div class="flex gap-2 text-slate-500">
+            <i data-lucide="info" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+            <p class="text-xs leading-relaxed">
+              <strong>Note:</strong> Vibe coding is a methodology for empowerment, not a replacement for professional software engineering practices.
+              Always consult your engineering lead before deploying any automation.
+            </p>
+          </div>
+        </div>
+        <!-- share -->
+        <div class="mt-16 mb-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-center sm:text-left">
+            <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
+            <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              onclick="shareToLinkedIn()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on LinkedIn"
+            >
+              <!-- LinkedIn SVG -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </button>
+
+            <button
+              onclick="shareToTwitter()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on Twitter"
+            >
+              <!-- X / Twitter SVG -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </button>
+
+            <button
+              onclick="shareToEmail()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share via Email"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="copyToClipboard()"
+              id="copyBtn"
+              class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm"
+            >
+              <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
+              <span id="copyText">Copy Link</span>
+            </button>
+          </div>
+        </div>
+        <!-- share ends-->
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
-            <p>© 2025 Ayush Jain. All rights reserved.</p>
-            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
-                <span class="icon-linkedin-logo"></span>
-                <span>Connect on LinkedIn</span>
-            </a>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+        <p>© 2025 Ayush Jain. All rights reserved.</p>
+        <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+          <span class="icon-linkedin-logo"></span>
+          <span>Connect on LinkedIn</span>
+        </a>
+      </div>
     </footer>
 
-    <!-- Initialize Share, Icons & Mobile Menu Script -->     
+    <!-- Initialize Share, Icons & Mobile Menu Script -->
     <script src="js/share.js" defer></script>
     <script src="js/nav.js" defer></script>
-</body>
-
+  </body>
 </html>

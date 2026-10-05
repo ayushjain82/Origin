@@ -1,350 +1,447 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M09DCB9XPN"></script>
     <script async src="js/ga.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Deep-Dive Pipeline Audit</title>
 
-    <meta name="title" content="The Zero-Failure Deployment Checklist | Origin Strategy Tools">
-    <meta name="description" content="A battle-tested production readiness checklist for SaaS and enterprise platforms. Ensure every release is predictable, compliant, and boring.">
-    <meta name="keywords" content="Deployment Checklist, Production Readiness, Release Management, Go-Live Protocol, Software Operations, PMO Tools, Ayush Jain">
-    <meta name="author" content="Ayush Jain">
+    <meta name="title" content="The Zero-Failure Deployment Checklist | Origin Strategy Tools" />
+    <meta
+      name="description"
+      content="A battle-tested production readiness checklist for SaaS and enterprise platforms. Ensure every release is predictable, compliant, and boring."
+    />
+    <meta
+      name="keywords"
+      content="Deployment Checklist, Production Readiness, Release Management, Go-Live Protocol, Software Operations, PMO Tools, Ayush Jain"
+    />
+    <meta name="author" content="Ayush Jain" />
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ayushjain82.github.io/Origin/checklist.html">
-    <meta property="og:title" content="The Zero-Failure Deployment Checklist">
-    <meta property="og:description" content="Stop relying on memory for production releases. A comprehensive, interactive checklist for seamless SaaS deployments.">
-    <meta property="og:image" content="https://ayushjain82.github.io/Origin/assets/images/checklist-tool-card.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ayushjain82.github.io/Origin/checklist.html" />
+    <meta property="og:title" content="The Zero-Failure Deployment Checklist" />
+    <meta
+      property="og:description"
+      content="Stop relying on memory for production releases. A comprehensive, interactive checklist for seamless SaaS deployments."
+    />
+    <meta property="og:image" content="https://ayushjain82.github.io/Origin/assets/images/checklist-tool-card.png" />
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ayushjain82.github.io/Origin/checklist.html">
-    <meta property="twitter:title" content="Interactive Tool: Zero-Failure Deployment Checklist">
-    <meta property="twitter:description" content="A technical leader's guide to boring, predictable, and successful production releases.">
-    <meta property="twitter:image" content="https://ayushjain82.github.io/Origin/assets/images/checklist-tool-card.png">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ayushjain82.github.io/Origin/checklist.html" />
+    <meta property="twitter:title" content="Interactive Tool: Zero-Failure Deployment Checklist" />
+    <meta property="twitter:description" content="A technical leader's guide to boring, predictable, and successful production releases." />
+    <meta property="twitter:image" content="https://ayushjain82.github.io/Origin/assets/images/checklist-tool-card.png" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="js/tailwind-config.js"></script>
-</head>
+  </head>
 
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
-
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- Logo / Brand -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div
-                    class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
-                    <i data-lucide="layers" class="w-5 h-5"></i>
-                </div>
-                <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
-            </a>
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- Logo / Brand -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+        </a>
 
-             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900 ">
-                <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors  ">The Lab</a>
-            </div>
-
-
-            <!-- Mobile Menu Button -->
-            <button aria-label="mobile menu" id="mobile-menu-btn"
-                class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900">
+          <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors">The Lab</a>
         </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu"
-            class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
-            <div class="flex flex-col p-6 space-y-6">
-                <a href="thelab.html"
-                    class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The
-                    Lab</a>
-            </div>
+
+        <!-- Mobile Menu Button -->
+        <button aria-label="mobile menu" id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
+        <div class="flex flex-col p-6 space-y-6">
+          <a href="thelab.html" class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The Lab</a>
         </div>
+      </div>
     </nav>
 
     <!-- Main Content -->
-     <main class="pt-32 pb-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 pb-6 border-b border-slate-200">
-                <div>
-                    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Technical Delivery Audit</h1>
-                    <p class="text-lg text-slate-600 mt-2 max-w-2xl">
-                        A forensic assessment of your "Path to Production." Evaluating Engineering Rigor, Program Governance, and Developer Experience.
-                    </p>
-                </div>
-                <div class="mt-6 md:mt-0 text-right">
-                    <div class="text-sm font-bold text-slate-500 uppercase tracking-widest">Target State</div>
-                    <div class="text-2xl font-bold text-indigo-600">Continuous Delivery</div>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-6">
-                    <div class="p-2 bg-indigo-100 rounded-lg text-indigo-600"><i data-lucide="zap" class="w-5 h-5"></i></div>
-                    Zone 1: Flow & Velocity
-                </h2>
-                
-                <div class="grid gap-4">
-                    
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-indigo-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-indigo-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Lead Time &lt; 60 Minutes</h3>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Baseline</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">From code commit to running in Production. Includes build, test, and deploy. If it takes longer, feedback loops are broken.</p>
-                        </div>
-                    </label>
-
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-indigo-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-indigo-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Trunk-Based Development</h3>
-                                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">Developers merge to Main at least daily. No long-lived feature branches that cause "Merge Hell" at the end of the sprint.</p>
-                        </div>
-                    </label>
-
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-indigo-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-indigo-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Build Caching Strategy</h3>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Technical</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">Dependencies (NPM/Maven) are cached. We do not re-download the internet on every build. Build time is optimized.</p>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-6">
-                    <div class="p-2 bg-purple-100 rounded-lg text-purple-600"><i data-lucide="shield-alert" class="w-5 h-5"></i></div>
-                    Zone 2: Governance & Risk
-                </h2>
-                
-                <div class="grid gap-4">
-                    
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-purple-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-purple-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Enforced Code Owners</h3>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Baseline</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">GitHub/GitLab enforces review. Merging to Main is impossible without approval from a designated code owner.</p>
-                        </div>
-                    </label>
-
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-purple-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-purple-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">No Secrets in Code</h3>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Security</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">Automated scanning (e.g., TruffleHog) runs on commit. Environment variables are injected at runtime, not hardcoded.</p>
-                        </div>
-                    </label>
-
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-purple-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-purple-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Immutability of Artifacts</h3>
-                                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">We build <strong>once</strong>. The exact same Docker image/Binary deployed to QA is the one promoted to Prod. No rebuilding per environment.</p>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-6">
-                    <div class="p-2 bg-emerald-100 rounded-lg text-emerald-600"><i data-lucide="activity" class="w-5 h-5"></i></div>
-                    Zone 3: Reliability & Quality
-                </h2>
-                
-                <div class="grid gap-4">
-                    
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-emerald-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-emerald-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Healthy Test Pyramid</h3>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Baseline</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">70% Unit Tests (Fast), 20% Integration, 10% E2E (Slow). We rely on fast feedback, not overnight regression suites.</p>
-                        </div>
-                    </label>
-
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-emerald-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-emerald-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Idempotent Deployments</h3>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Technical</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">We can run the deployment script 10 times in a row without breaking anything. It checks state before acting.</p>
-                        </div>
-                    </label>
-
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-emerald-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-emerald-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Observability as Code</h3>
-                                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">Dashboards and Alerts are version controlled (e.g., Terraform). We don't manually click-to-configure Datadog/NewRelic.</p>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <div class="mb-12">
-                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-6">
-                    <div class="p-2 bg-rose-100 rounded-lg text-rose-600"><i data-lucide="heart-handshake" class="w-5 h-5"></i></div>
-                    Zone 4: Developer Experience
-                </h2>
-                
-                <div class="grid gap-4">
-                    
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-rose-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-rose-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Local Dev Parity</h3>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Baseline</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">"It works on my machine" is solved. Local environments use Docker/Containers that mirror Production exactly.</p>
-                        </div>
-                    </label>
-
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-rose-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-rose-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">Searchable Runbooks</h3>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Documentation</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">If the build fails or an alert fires, there is a linked Runbook with step-by-step resolution instructions.</p>
-                        </div>
-                    </label>
-
-                    <label class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-rose-300 transition-colors group">
-                        <input type="checkbox" class="audit-checkbox hidden">
-                        <div class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-rose-400">
-                            <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
-                        </div>
-                        <div class="audit-content flex-1">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-slate-900">No Alert Fatigue</h3>
-                                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
-                            </div>
-                            <p class="text-slate-600 text-sm mt-1">Alerts are actionable. We don't have "Warning" channels that everyone ignores. If it's not urgent, it's not a PagerDuty alert.</p>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mt-16 pt-8 border-t border-slate-300">
-                <button onclick="window.print()" class="bg-slate-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-indigo-600 transition-colors inline-flex items-center gap-2">
-                    <i data-lucide="printer" class="w-4 h-4"></i> Save Audit Report
-                </button>
-            </div>
-
-       <!-- share -->
-            <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div class="text-center sm:text-left">
-                    <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
-                    <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
-                </div>
-                
-                <div class="flex items-center gap-3">
-                    <button onclick="shareToLinkedIn()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on LinkedIn">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </button>
-                    
-                    <button onclick="shareToTwitter()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share on Twitter">
-                        <i data-lucide="twitter" class="w-5 h-5"></i>
-                    </button>
-
-                    <button onclick="shareToEmail()" class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md" aria-label="Share via Email">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                    </button>
-
-                    <button onclick="copyToClipboard()" id="copyBtn" class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm">
-                        <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
-                        <span id="copyText">Copy Link</span>
-                    </button>
-                </div>
-            </div>
-            <!-- share ends-->
-
+    <main class="pt-32 pb-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 pb-6 border-b border-slate-200">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Technical Delivery Audit</h1>
+            <p class="text-lg text-slate-600 mt-2 max-w-2xl">
+              A forensic assessment of your "Path to Production." Evaluating Engineering Rigor, Program Governance, and Developer Experience.
+            </p>
+          </div>
+          <div class="mt-6 md:mt-0 text-right">
+            <div class="text-sm font-bold text-slate-500 uppercase tracking-widest">Target State</div>
+            <div class="text-2xl font-bold text-indigo-600">Continuous Delivery</div>
+          </div>
         </div>
+
+        <div class="mb-12">
+          <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-6">
+            <div class="p-2 bg-indigo-100 rounded-lg text-indigo-600"><i data-lucide="zap" class="w-5 h-5"></i></div>
+            Zone 1: Flow & Velocity
+          </h2>
+
+          <div class="grid gap-4">
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-indigo-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-indigo-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Lead Time &lt; 60 Minutes</h3>
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Baseline</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  From code commit to running in Production. Includes build, test, and deploy. If it takes longer, feedback loops are broken.
+                </p>
+              </div>
+            </label>
+
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-indigo-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-indigo-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Trunk-Based Development</h3>
+                  <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  Developers merge to Main at least daily. No long-lived feature branches that cause "Merge Hell" at the end of the sprint.
+                </p>
+              </div>
+            </label>
+
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-indigo-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-indigo-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Build Caching Strategy</h3>
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Technical</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  Dependencies (NPM/Maven) are cached. We do not re-download the internet on every build. Build time is optimized.
+                </p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-6">
+            <div class="p-2 bg-purple-100 rounded-lg text-purple-600"><i data-lucide="shield-alert" class="w-5 h-5"></i></div>
+            Zone 2: Governance & Risk
+          </h2>
+
+          <div class="grid gap-4">
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-purple-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-purple-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Enforced Code Owners</h3>
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Baseline</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  GitHub/GitLab enforces review. Merging to Main is impossible without approval from a designated code owner.
+                </p>
+              </div>
+            </label>
+
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-purple-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-purple-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">No Secrets in Code</h3>
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Security</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  Automated scanning (e.g., TruffleHog) runs on commit. Environment variables are injected at runtime, not hardcoded.
+                </p>
+              </div>
+            </label>
+
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-purple-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-purple-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Immutability of Artifacts</h3>
+                  <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  We build <strong>once</strong>. The exact same Docker image/Binary deployed to QA is the one promoted to Prod. No rebuilding per
+                  environment.
+                </p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-6">
+            <div class="p-2 bg-emerald-100 rounded-lg text-emerald-600"><i data-lucide="activity" class="w-5 h-5"></i></div>
+            Zone 3: Reliability & Quality
+          </h2>
+
+          <div class="grid gap-4">
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-emerald-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-emerald-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Healthy Test Pyramid</h3>
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Baseline</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  70% Unit Tests (Fast), 20% Integration, 10% E2E (Slow). We rely on fast feedback, not overnight regression suites.
+                </p>
+              </div>
+            </label>
+
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-emerald-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-emerald-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Idempotent Deployments</h3>
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Technical</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  We can run the deployment script 10 times in a row without breaking anything. It checks state before acting.
+                </p>
+              </div>
+            </label>
+
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-emerald-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-emerald-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Observability as Code</h3>
+                  <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  Dashboards and Alerts are version controlled (e.g., Terraform). We don't manually click-to-configure Datadog/NewRelic.
+                </p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-6">
+            <div class="p-2 bg-rose-100 rounded-lg text-rose-600"><i data-lucide="heart-handshake" class="w-5 h-5"></i></div>
+            Zone 4: Developer Experience
+          </h2>
+
+          <div class="grid gap-4">
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-rose-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-rose-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Local Dev Parity</h3>
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Baseline</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  "It works on my machine" is solved. Local environments use Docker/Containers that mirror Production exactly.
+                </p>
+              </div>
+            </label>
+
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-rose-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-rose-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">Searchable Runbooks</h3>
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded">Documentation</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  If the build fails or an alert fires, there is a linked Runbook with step-by-step resolution instructions.
+                </p>
+              </div>
+            </label>
+
+            <label
+              class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex gap-4 cursor-pointer hover:border-rose-300 transition-colors group"
+            >
+              <input type="checkbox" class="audit-checkbox hidden" />
+              <div
+                class="w-6 h-6 mt-1 border-2 border-slate-300 rounded flex-shrink-0 flex items-center justify-center bg-white transition-all group-hover:border-rose-400"
+              >
+                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+              </div>
+              <div class="audit-content flex-1">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-slate-900">No Alert Fatigue</h3>
+                  <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
+                </div>
+                <p class="text-slate-600 text-sm mt-1">
+                  Alerts are actionable. We don't have "Warning" channels that everyone ignores. If it's not urgent, it's not a PagerDuty alert.
+                </p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 mt-16 pt-8 border-t border-slate-300">
+          <button
+            onclick="window.print()"
+            class="bg-slate-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-indigo-600 transition-colors inline-flex items-center gap-2"
+          >
+            <i data-lucide="printer" class="w-4 h-4"></i> Save Audit Report
+          </button>
+        </div>
+
+        <!-- share -->
+        <div class="mt-16 mb-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-center sm:text-left">
+            <h3 class="text-lg font-bold text-slate-900">Found this useful?</h3>
+            <p class="text-sm text-slate-500 mt-1">Share this framework with your network or engineering team.</p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              onclick="shareToLinkedIn()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on LinkedIn"
+            >
+              <!-- LinkedIn SVG -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </button>
+
+            <button
+              onclick="shareToTwitter()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share on Twitter"
+            >
+              <!-- X / Twitter SVG -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </button>
+
+            <button
+              onclick="shareToEmail()"
+              class="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              aria-label="Share via Email"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </button>
+
+            <button
+              onclick="copyToClipboard()"
+              id="copyBtn"
+              class="group flex items-center gap-2 px-4 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md font-medium text-sm"
+            >
+              <i data-lucide="link" class="w-4 h-4" id="copyIcon"></i>
+              <span id="copyText">Copy Link</span>
+            </button>
+          </div>
+        </div>
+        <!-- share ends-->
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
-            <p>© 2025 Ayush Jain. All rights reserved.</p>
-            <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
-                <span class="icon-linkedin-logo"></span>
-                <span>Connect on LinkedIn</span>
-            </a>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
+        <p>© 2025 Ayush Jain. All rights reserved.</p>
+        <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
+          <span class="icon-linkedin-logo"></span>
+          <span>Connect on LinkedIn</span>
+        </a>
+      </div>
     </footer>
 
-    <!-- Initialize Share, Icons & Mobile Menu Script -->     
+    <!-- Initialize Share, Icons & Mobile Menu Script -->
     <script src="js/share.js" defer></script>
     <script src="js/nav.js" defer></script>
-</body>
+  </body>
 </html>
