@@ -31,6 +31,23 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+/* Custom base touches aligned with Origin Strategy palette */
+body {
+  font-family: "Inter", sans-serif;
+}
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+/* Subtle grid background */
+.bg-grid-pattern {
+  background-size: 36px 36px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+.brand {
+  font-family: "Sora", "Space Grotesk", ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+}
 
 @keyframes shimmer {
   0% {
@@ -137,6 +154,11 @@ section {
   animation: fadeInUp 0.8s ease-out;
 }
 /* Custom */
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 /* linkedin CTA*/
 .btn-linkedin {

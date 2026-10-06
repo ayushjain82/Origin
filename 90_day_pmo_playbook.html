@@ -8,42 +8,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>90-Day PMO Playbook</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind Play CDN + Custom Config with Cache Busting -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="js/tailwind-config.js"></script>
   </head>
+
   <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <!-- Logo / Brand -->
-        <a href="index.html" class="flex items-center gap-2 group">
-          <div class="bg-slate-900 text-white p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors duration-300">
-            <i data-lucide="layers" class="w-5 h-5"></i>
-          </div>
-          <span class="font-bold text-lg tracking-tight text-slate-800">Origin</span>
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-800 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
+        <!-- Branding-->
+        <a href="index.html" class="brand flex flex-col leading-none text-white" aria-label="Ayush Jain, home">
+          <span class="text-[25px] font-extrabold tracking-tight">Ayush Jain</span>
         </a>
+        <!-- Branding ends-->
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black-900">
-          <a href="thelab.html" class="font-bold underline underline-offset-4 hover:text-indigo-400 transition-colors">The Lab</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button aria-label="mobile menu" id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 p-2 focus:outline-none">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+        <nav class="flex items-center gap-3 md:gap-6 text-sm text-slate-400">
+          <a href="index.html" class="hover:text-white transition-colors">About</a>
+          <a href="index.html#work" class="hidden md:block hover:text-white transition-colors">Selected Work</a>
+          <a href="thelab.html" class="hover:text-white transition-colors flex items-center gap-1.5 group"> The Lab</a>
+          <a href="#connect" class="hover:text-white transition-colors">Connect</a>
+        </nav>
       </div>
-      <!-- Mobile Menu (Hidden by default) -->
-      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-lg">
-        <div class="flex flex-col p-6 space-y-6">
-          <a href="thelab.html" class="mobile-link text-base font-medium text-slate-600 hover:text-slate-900 transition-colors">The Lab</a>
-        </div>
-      </div>
-    </nav>
+    </header>
 
     <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto">
       <header class="mb-12 text-center">
@@ -225,13 +223,36 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 px-4 bg-gray-800 text-center text-gray-400">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-4xl mx-auto">
-        <p>© 2025 Ayush Jain. All rights reserved.</p>
-        <a href="https://www.linkedin.com/in/aayushjain" target="_blank" class="btn-linkedin max-w-xl mx-auto">
-          <span class="icon-linkedin-logo"></span>
-          <span>Connect on LinkedIn</span>
-        </a>
+    <footer id="connect" class="scroll-mt-20 border-t border-slate-700/60 bg-slate-800">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 py-16">
+        <div class="grid md:grid-cols-[1fr_auto] gap-10 items-center">
+          <div>
+            <p class="text-xs font-mono uppercase tracking-widest text-indigo-400 font-semibold mb-2">Connect</p>
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white mb-3">Let's talk about your next program.</h2>
+            <p class="text-slate-300 max-w-xl leading-relaxed">
+              Open to Program, TPM and PMO leadership roles. The best way to reach me is LinkedIn.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="https://www.linkedin.com/in/aayushjain"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 rounded-lg bg-indigo-500 px-5 py-2.5 font-semibold text-white hover:bg-indigo-400 transition-colors"
+            >
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-6 border-t border-slate-700/60 flex flex-col sm:flex-row gap-4 justify-between text-sm text-slate-400">
+          <p>© 2026 Ayush Jain</p>
+          <nav class="flex gap-6">
+            <a href="index.html" class="hover:text-white transition-colors">About</a>
+            <a href="index.html#work" class="hover:text-white transition-colors">Selected Work</a>
+          </nav>
+        </div>
       </div>
     </footer>
 
